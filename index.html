@@ -93,18 +93,31 @@
                 <h2>Spot the bot!</h2>
                 <p>Pick the response written by a human</p>
                 <p>Two responses are from ChatGPT, one is a human. Guess the human response.</p>
-                <button>Begin</button>
+                <button id="beginSpotGameBtn">Begin</button>
             </div>
             <div class="userInputPage hidden">
                 <h2>Write a tweet from the @girlscouts account announcing @Planet_Oat as a national sponsor for the Girl Scout Cookie Program:</h2>
                 <div class="horizontal-flex" style="flex-wrap: wrap;">
-                    <div class="spotCard">
-                        Step aside, basic snacks, there's a new player in town! @Planet_Oat is joining forces with the Girl Scouts for the ultimate #CookieSeason takeover. Brace yourselves, cookie lovers, for a sweet and sassy experience 💁🏼‍♀️ #GirlScouts #PlanetOat #WittyAndDelicious
+                    <div class="spotCard gpt-answer unclicked">
+                        <h3>ChatGPT</h3>
+                        <p>
+                            Step aside, basic snacks, there's a new player in town! @Planet_Oat is joining forces with the Girl Scouts for the ultimate #CookieSeason takeover. Brace yourselves, cookie lovers, for a sweet and sassy experience 💁🏼‍♀️ #GirlScouts #PlanetOat #WittyAndDelicious
+                        </p>
                     </div>
-                    <div class="spotCard">It's cookie o'clock! ⏰ Let's rally behind Girl Scout entrepreneurs. This year, we're delighted to introduce @Planet_Oat as a national sponsor of the Girl Scout Cookie Program. Get the scoop on all the things to look forward to this
-                        #GirlScoutCookieSeason.
+                    <div class="spotCard human-answer unclicked">
+                        <h3>Human</h3>
+                        <p>
+                            It's cookie o'clock! ⏰ Let's rally behind Girl Scout entrepreneurs. This year, we're delighted to introduce @Planet_Oat as a national sponsor of the Girl Scout Cookie Program. Get the scoop on all the things to look forward to this
+                            #GirlScoutCookieSeason.
+                        </p>
                     </div>
-                    <div class="spotCard">Exciting news! We're thrilled to announce @Planet_Oat as our national sponsor for the Girl Scout Cookie Program! Together, we're empowering girls to become leaders and changemakers in their communities 💪🏼 #GirlScouts #PlanetOat #CookieSeason</div>
+                    <div class="spotCard gpt-answer unclicked">
+                        <h3>ChatGPT</h3>
+                        <p>
+                            Exciting news! We're thrilled to announce @Planet_Oat as our national sponsor for the Girl Scout Cookie Program! Together, we're empowering girls to become leaders and changemakers in their communities 💪🏼 #GirlScouts #PlanetOat #CookieSeason
+                        </p>
+                    </div>
+                    
                 </div>
                 <button>Submit</button>
             </div>

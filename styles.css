@@ -5,7 +5,10 @@
     --light-purple: #8375a8;
     --light-gray: #C9C5CA;
     --gray: #939094;
+    --dark-gray: #737274;
     --sideMenu-gameModeLogo-size: 1.2rem;
+    --correct-green: #34C759;
+    --incorrect-red: #eb4e3d;
 }
 
 body {
@@ -199,18 +202,32 @@ hr.menuDivider {
 
 /*top right bottom left*/
 
+/*********************** SPOTCARD *************************/
+
+/*
+options for spotCard classes:
+    spotCard gpt-answer unclicked
+    spotCard gpt-answer clicked
+    spotCard gpt-answer final
+    spotCard human-answer unclicked
+    spotCard human-answer final
+*/
+
 .spotCard {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     font-size: 0.8rem;
     padding: 2rem 2rem 2rem 2rem;
     width: 17rem;
     height: 10rem;
     border: 0.5px solid var(--gray);
-    align-items: center;
     border-radius: 20px;
     margin: 0.5rem 0.5rem 0.5rem 0.5rem;
     background-color: white;
     line-height: 1.5;
+    text-align: left;
     /*don't allow users to highlight the text in these buttons*/
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -218,10 +235,116 @@ hr.menuDivider {
     user-select: none;
 }
 
-.spotCard:hover {
+/**** cards ****/
+
+.spotCard.unclicked:hover {
     cursor: pointer;
     box-shadow: 1px 1px 5px gray;
 }
+
+.spotCard.gpt-answer.clicked {
+    animation: change-boarder 2s;
+    border: 0.5px solid white;
+}
+
+.spotCard.gpt-answer.final {
+    border: 0.5px solid white;
+}
+
+.spotCard.human-answer.final {
+    border: 0.5px solid var(--correct-green);
+}
+
+@keyframes change-boarder {
+    0% {
+        border: 0.5px solid var(--gray);
+    }
+    25% {
+        border: 0.5px solid var(--incorrect-red);
+    }
+    75% {
+        border: 0.5px solid var(--incorrect-red);
+    }
+    100% {
+        border: 0.5px solid white;
+    }
+}
+
+/**** h3 ****/
+
+.spotCard h3 {
+    margin-block-start: 0.5rem;
+    margin-block-end: 0.5rem;
+}
+
+.spotCard.unclicked h3 {
+    display: none;
+}
+
+.spotCard.gpt-answer.clicked h3 {
+    animation: change-h3 2s;
+    color: var(--light-gray)
+}
+
+.spotCard.gpt-answer.final h3 {
+    color: var(--light-gray)
+}
+
+.spotCard.human-answer.final h3 {
+    color: var(--correct-green)
+}
+
+@keyframes change-h3 {
+    0% {
+        color: var(--gray)
+    }
+    25% {
+        color: var(--incorrect-red)
+    }
+    75% {
+        color: var(--incorrect-red)
+    }
+    100% {
+        color: var(--light-gray)
+    }
+}
+
+/**** p ****/
+
+.spotCard p {
+    margin-block-start: 0.5rem;
+    margin-block-end: 0.5rem;
+}
+
+.spotCard.gpt-answer.clicked p {
+    animation: change-p 2s;
+    color: var(--light-gray)
+}
+
+.spotCard.gpt-answer.final p {
+    color: var(--light-gray)
+}
+
+.spotCard.human-answer.final p {
+    color: var(--dark-gray)
+}
+
+@keyframes change-p {
+    0% {
+        color: var(--gray)
+    }
+    25% {
+        color: var(--dark-gray)
+    }
+    75% {
+        color: var(--dark-gray)
+    }
+    100% {
+        color: var(--light-gray)
+    }
+}
+
+/************************* END SPOTCARD ***********************/
 
 .userInputPage {
     text-align: center;
