@@ -55,3 +55,24 @@ burgerMenuButtons.forEach((burgerMenuBtn) => {
 
 //Automatically select the first element
 selectGameMode(gameModeElements[0]);
+
+
+// event listener for spotCards
+spotCards = document.querySelectorAll(".spotCard");
+for (let spotCard of spotCards) {
+    spotCard.addEventListener("click", () => {
+        if (spotCard.classList.contains("gpt-answer")) {
+            // change class to red
+            spotCard.className = "spotCard gpt-answer clicked";
+        } else { // its human, so need to change it to green and others to grey
+            // change class to green
+            spotCard.className = "spotCard human-answer final";
+            // get any unclicked and change to grey
+            others = document.querySelectorAll(".spotCard.gpt-answer");
+            for (let other of others) {
+                other.className = "spotCard gpt-answer final";
+            }
+            // TODO - show the button for next question...
+        }
+    });
+}
