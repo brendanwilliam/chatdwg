@@ -76,3 +76,11 @@ for (let spotCard of spotCards) {
         }
     });
 }
+
+
+fetch("./data/spotTheBot.json")
+    .then((response) => {
+        //console.log(response);
+        return response.json();
+    })
+    .then((json) => { console.log(json); });
