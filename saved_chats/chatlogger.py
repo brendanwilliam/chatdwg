@@ -31,7 +31,7 @@ def extract_chatlog(filepath):
   print('Messages saved: ' + str(len(chats)))
 
   # Creates an empty dataframe to store the chatlog
-  chat_list = pd.DataFrame(columns=['datetime', 'author', 'message', 'version'])
+  chat_list = pd.DataFrame(columns=['datetime', 'chat_index', 'author', 'message', 'version'])
 
   # Loops through the chatgpt responses and adds them to the dataframe
   for i in range(len(chats)):
@@ -42,7 +42,7 @@ def extract_chatlog(filepath):
     else:
       user = 'chatgpt'
 
-    chat_list.loc[i] = [file_name, user, chat.text, version]
+    chat_list.loc[i] = [file_name, i, user, chat.text, version]
 
   # Saves dataframe to csv in the csv folder
   chat_list.to_csv('./csv/' + file_name + '.csv', index=False)
@@ -63,7 +63,7 @@ def combine_chat_data():
   csv_files = os.listdir('./csv')
 
   # Creates an empty dataframe to store the chatlog
-  chat_list = pd.DataFrame(columns=['datetime', 'author', 'message', 'version'])
+  chat_list = pd.DataFrame(columns=['datetime', 'chat_index', 'author', 'message', 'version'])
 
   # Loops through the csv files and adds them to the dataframe
   for csv_file in csv_files:
