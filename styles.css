@@ -265,6 +265,44 @@ input[type="text"]:focus {
     color: var(--gray);
 }
 
+table {
+    border-spacing: 0.5rem;
+    border-collapse: separate;
+    width: 50rem;
+    height: 15rem;
+}
+td {
+    border: 0.5px solid black;
+    /*top right bottom left*/
+    padding: 10px 25px 10px 25px;
+    border-radius: 15px;
+    margin: 20px;
+    text-align: left;
+    font-size: 0.8rem;
+    
+}
+
+td:first-of-type {
+    border: 1.1px solid green;
+    width: 20%;
+    background-color: white;
+    
+}
+
+td:first-of-type h3 {
+    color: green;
+}
+
+td:last-of-type {
+    border: 1.1px solid red;
+    width: 80%;
+    background-color: white;
+}
+
+td:last-of-type h3 {
+    color: red;
+}
+
 
 /* Hide left column when screen is less than 800px */
 
