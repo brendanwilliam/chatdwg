@@ -15,12 +15,14 @@ function selectGameMode(element) {
             //Reset this game mode
             let titlePageElement = gameModeMainContent.querySelector(".titlePage");
             let userInputPage = gameModeMainContent.querySelector(".userInputPage");
+            let endPage = gameModeMainContent.querySelector(".endingPage");
             titlePageElement.classList.remove("hidden");
             userInputPage.classList.add("hidden");
+            endPage.classList.add("hidden");
         }
     }
 }
-for (let element of gameModeElements) {
+for (let [index, element] of gameModeElements.entries()) {
     element.addEventListener("click", () => {
         if (window.innerWidth < 800) {
             document.getElementById("sideMenu").style.display = "none";
@@ -37,9 +39,135 @@ for (let element of gameModeElements) {
     let userInputPage = gameModeMainContents[currentTabIndex].querySelector(".userInputPage");
 
     //console.log(titlePageElement.querySelector("button"));
+
+    //Begin is clicked here
     titlePageElement.querySelector("button").addEventListener("click", () => {
-        titlePageElement.classList.add("hidden");
-        userInputPage.classList.remove("hidden");
+
+        function loadPageVisuals() {
+            titlePageElement.classList.add("hidden");
+            userInputPage.classList.remove("hidden");
+        }
+
+        switch (index) {
+            case 0:
+                {
+                    //This is Spot The Bot
+                    fetch("./data/spotTheBot.json")
+                    .then((response) => {
+                        //console.log(response);
+                        return response.json();
+                    })
+                    .then((questionsData) => {
+                        //After we have access to the database
+
+                        //Populate all data into bubbles
+                        let spotCardsContainer = userInputPage.querySelector("#spotCardsContainer");
+                        let spotTheBotNextButton = userInputPage.querySelector("#spotTheBotNextButton");
+                        let questionIndex = 0;
+
+
+                        function populateQuestionData(questionIndex) {
+                            spotCardsContainer.innerHTML = "";
+
+                            //Question title
+                            let h2 = document.createElement("h2");
+                            h2.innerHTML = questionsData[questionIndex]["question"];
+                            spotCardsContainer.appendChild(h2);
+
+                            //Wrapper div containing all the answer choice elements
+                            let answerWrapperDiv = document.createElement("div");
+                            answerWrapperDiv.classList.add("horizontal-flex");
+                            answerWrapperDiv.style.flexWrap = "wrap";
+
+                            //Set the onclick for each spot card to respond with UI changes
+                            function spotCardClickAction(event) {
+                                let spotCard = this;
+
+                                if (spotCard.classList.contains("gpt-answer")) {
+                                    //If spot card is classified as a GPT answer, 
+                                    spotCard.classList.remove("unclicked");
+                                    spotCard.classList.add("clicked");
+                                } else { // It's human, so need to change it to green and others to grey
+                                    // change class to green
+
+                                    let allAnswerChoices = answerWrapperDiv.querySelectorAll(".spotCard");
+                                    allAnswerChoices.forEach((eachSpotCard) => {
+
+                                        eachSpotCard.classList.remove("unclicked");
+                                        eachSpotCard.classList.add("final");
+                                        eachSpotCard.removeEventListener("click", spotCardClickAction, false);
+                                        eachSpotCard.onclick = null;
+                                        console.log(eachSpotCard);
+                                    });
+                                    let humanAnswerCard = answerWrapperDiv.querySelector(".spotCard.human-answer");
+                                    humanAnswerCard.classList.add("final");
+
+                                    // TODO - show the button for next question...
+                                    spotTheBotNextButton.classList.remove("invisible");
+                                }
+                            }
+
+                            for (let answer of questionsData[questionIndex]["answers"]) {
+                                //answer here is an object with props "answerContent" and "chatGPTAnswer"
+
+                                //Create a spot card
+                                let spotCard = document.createElement("div");
+                                spotCard.classList.add("spotCard", "unclicked");
+
+                                //Add hidden h3 title to spot card
+                                let h3 = document.createElement("h3");
+                                if (answer["chatGPTAnswer"] == true) {
+                                    h3.innerHTML = "ChatGPT";
+                                    spotCard.classList.add("gpt-answer");
+                                } else {
+                                    h3.innerHTML = "Human";
+                                    spotCard.classList.add("human-answer");
+                                }
+                                spotCard.appendChild(h3);
+
+                                //Add actual answer content to spot card
+                                let p = document.createElement("p");
+                                p.innerHTML = answer["answerContent"]
+                                spotCard.appendChild(p);
+                                answerWrapperDiv.appendChild(spotCard);
+
+                                spotCard.addEventListener("click", spotCardClickAction, false);
+
+                            }
+                            spotCardsContainer.appendChild(answerWrapperDiv);
+                            let p = document.createElement("p");
+                            p.innerHTML = "Pick the response written by a human";
+                            spotCardsContainer.appendChild(p);
+                            let p2 = document.createElement("p");
+                            p2.innerHTML = (questionIndex + 1) + " / " + questionsData.length;
+                            spotCardsContainer.appendChild(p2);
+                            //Initially hide the button 
+                            spotTheBotNextButton.classList.add("invisible");
+
+                        }
+
+                        spotTheBotNextButton.addEventListener("click", () => {
+                            questionIndex++;
+                            if (questionIndex >= questionsData.length) {
+                                questionIndex = 0;
+                                userInputPage.classList.add("hidden");
+                                document.querySelector(".endingPage").classList.remove("hidden");
+                                return;
+                            }
+                            //If we make it past this point, show the next question
+                            populateQuestionData(questionIndex);
+
+                        });
+
+                        //Show actual page content
+                        loadPageVisuals();
+                        populateQuestionData(questionIndex);
+                        console.log(questionsData);
+                    });
+                }
+                break;
+        }
+
     });
 }
 
@@ -55,32 +183,3 @@ burgerMenuButtons.forEach((burgerMenuBtn) => {
 
 //Automatically select the first element
 selectGameMode(gameModeElements[0]);
-
-
-// event listener for spotCards
-spotCards = document.querySelectorAll(".spotCard");
-for (let spotCard of spotCards) {
-    spotCard.addEventListener("click", () => {
-        if (spotCard.classList.contains("gpt-answer")) {
-            // change class to red
-            spotCard.className = "spotCard gpt-answer clicked";
-        } else { // its human, so need to change it to green and others to grey
-            // change class to green
-            spotCard.className = "spotCard human-answer final";
-            // get any unclicked and change to grey
-            others = document.querySelectorAll(".spotCard.gpt-answer");
-            for (let other of others) {
-                other.className = "spotCard gpt-answer final";
-            }
-            // TODO - show the button for next question...
-        }
-    });
-}
-
-
-fetch("./data/spotTheBot.json")
-    .then((response) => {
-        //console.log(response);
-        return response.json();
-    })
-    .then((json) => { console.log(json); });

@@ -96,36 +96,43 @@
                 <button id="beginSpotGameBtn">Begin</button>
             </div>
             <div class="userInputPage hidden">
-                <h2>Write a tweet from the @girlscouts account announcing @Planet_Oat as a national sponsor for the Girl Scout Cookie Program:</h2>
-                <div class="horizontal-flex" style="flex-wrap: wrap;">
-                    <div class="spotCard gpt-answer unclicked">
-                        <h3>ChatGPT</h3>
-                        <p>
-                            Step aside, basic snacks, there's a new player in town! @Planet_Oat is joining forces with the Girl Scouts for the ultimate #CookieSeason takeover. Brace yourselves, cookie lovers, for a sweet and sassy experience 💁🏼‍♀️ #GirlScouts #PlanetOat #WittyAndDelicious
-                        </p>
+                <div id="spotCardsContainer">
+                    <h2>Write a tweet from the @girlscouts account announcing @Planet_Oat as a national sponsor for the Girl Scout Cookie Program:</h2>
+                    <div class="horizontal-flex" style="flex-wrap: wrap;">
+                        <div class="spotCard gpt-answer unclicked">
+                            <h3>ChatGPT</h3>
+                            <p>
+                                Step aside, basic snacks, there's a new player in town! @Planet_Oat is joining forces with the Girl Scouts for the ultimate #CookieSeason takeover. Brace yourselves, cookie lovers, for a sweet and sassy experience 💁🏼‍♀️ #GirlScouts #PlanetOat #WittyAndDelicious
+                            </p>
+                        </div>
+                        <div class="spotCard human-answer unclicked">
+                            <h3>Human</h3>
+                            <p>
+                                It's cookie o'clock! ⏰ Let's rally behind Girl Scout entrepreneurs. This year, we're delighted to introduce @Planet_Oat as a national sponsor of the Girl Scout Cookie Program. Get the scoop on all the things to look forward to this #GirlScoutCookieSeason.
+                            </p>
+                        </div>
+                        <div class="spotCard gpt-answer unclicked">
+                            <h3>ChatGPT</h3>
+                            <p>
+                                Exciting news! We're thrilled to announce @Planet_Oat as our national sponsor for the Girl Scout Cookie Program! Together, we're empowering girls to become leaders and changemakers in their communities 💪🏼 #GirlScouts #PlanetOat #CookieSeason
+                            </p>
+                        </div>
+
                     </div>
-                    <div class="spotCard human-answer unclicked">
-                        <h3>Human</h3>
-                        <p>
-                            It's cookie o'clock! ⏰ Let's rally behind Girl Scout entrepreneurs. This year, we're delighted to introduce @Planet_Oat as a national sponsor of the Girl Scout Cookie Program. Get the scoop on all the things to look forward to this
-                            #GirlScoutCookieSeason.
-                        </p>
-                    </div>
-                    <div class="spotCard gpt-answer unclicked">
-                        <h3>ChatGPT</h3>
-                        <p>
-                            Exciting news! We're thrilled to announce @Planet_Oat as our national sponsor for the Girl Scout Cookie Program! Together, we're empowering girls to become leaders and changemakers in their communities 💪🏼 #GirlScouts #PlanetOat #CookieSeason
-                        </p>
-                    </div>
-                    
                 </div>
-                <button>Submit</button>
+                <button id="spotTheBotNextButton">Continue</button>
+            </div>
+            <div class="endingPage hidden">
+                <h2>Thank you</h2>
+                <p>Your help and feedback is greatly appreciated as<br>we continue to refine our Capstone project.</p>
+                <p>Please help us collect your feedback by taking the survey below.</p>
+                <button id="beginSpotGameBtn">Take feedback survey</button>
             </div>
         </div>
         <div class="mainContent layoutColumn vertical-flex">
             <img class="burgerMenuIcon" src="img/hamburger.png" />
             <div class="titlePage">
-                <h2>Are you smarter than A.I.?</h2>
+                <h2>Are you smarter than AI?</h2>
                 <p>Answer a series of trivia-style questions to see if you can outsmart ChatGPT</p>
                 <p>ChatGPT got 2 out of 6 questions correct. Can you do better?</p>
                 <button>Begin</button>
@@ -145,7 +152,8 @@
                             </td>
                             <td>
                                 <h3>ChatGPT answer</h3>
-                                The artist from Houston, Texas who has a fan base named after a group of insects is Travis Scott. His fans are referred to as "the Scotties," a reference to to the phrase "La Flame," which is a nickname for Travis Scott, and a nod to the word "scorpion," a type of arachnid.
+                                The artist from Houston, Texas who has a fan base named after a group of insects is Travis Scott. His fans are referred to as "the Scotties," a reference to to the phrase "La Flame," which is a nickname for Travis Scott, and a nod to the word "scorpion,"
+                                a type of arachnid.
                             </td>
                         </tr>
                     </table>
