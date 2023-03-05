@@ -1,0 +1,49 @@
+[{
+        "question": "Write a tweet from the @girlscouts account announcing @Planet_Oat as a national sponsor for the Girl Scout Cookie Program:",
+        "answers": [{
+                "answerContent": "Step aside, basic snacks, there's a new player in town! @Planet_Oat is joining forces with the Girl Scouts for the ultimate #CookieSeason takeover. Brace yourselves, cookie lovers, for a sweet and sassy experience 💁🏼‍♀️ #GirlScouts #PlanetOat #WittyAndDelicious",
+                "chatGPTAnswer": true
+            },
+            {
+                "answerContent": "It's cookie o'clock! ⏰ Let's rally behind Girl Scout entrepreneurs. This year, we're delighted to introduce @Planet_Oat as a national sponsor of the Girl Scout Cookie Program. Get the scoop on all the things to look forward to this #GirlScoutCookieSeason.",
+                "chatGPTAnswer": false
+            },
+            {
+                "answerContent": "Exciting news! We're thrilled to announce @Planet_Oat as our national sponsor for the Girl Scout Cookie Program! Together, we're empowering girls to become leaders and changemakers in their communities 💪🏼 #GirlScouts #PlanetOat #CookieSeason",
+                "chatGPTAnswer": true
+            }
+        ]
+    },
+    {
+        "question": "Write a news headline about Ticketmaster having a smoother ticket release for Beyonce's tour",
+        "answers": [{
+                "answerContent": "Beyoncé tour sales are off to a smoother start. What does that mean for Ticketmaster?",
+                "chatGPTAnswer": false
+            },
+            {
+                "answerContent": "Ticketmaster Promises Smoother Ticket Release for Beyonce's Highly Anticipated Tour",
+                "chatGPTAnswer": true
+            },
+            {
+                "answerContent": "Beyonce Tour Ticket Release Goes Smoother with Ticketmaster's Improved Handling",
+                "chatGPTAnswer": true
+            }
+        ]
+    },
+    {
+        "question": "Write a short post for the subreddit r/antiwork",
+        "answers": [{
+                "answerContent": "Tired of the daily grind? Join the anti-work movement and take a step back from the never-ending cycle of productivity and stress. It's time to prioritize our well-being and find joy outside of the traditional work environment. Let's reclaim our time and live life on our own terms!",
+                "chatGPTAnswer": true
+            },
+            {
+                "answerContent": "UPS just cut package loaders pay by $80 a week. $320 a month pay cut for back breaking work during sky high inflation, and record profits for the company. Please help me spread this message so we can get some support for contract negotiations.",
+                "chatGPTAnswer": false
+            },
+            {
+                "answerContent": "Why do we equate our worth with our job titles and salaries? Society has taught us that success is defined by our career achievements, but it's time to break free from this toxic mentality. Let's shift the focus to our passions, hobbies, and relationships and find fulfillment beyond the office.",
+                "chatGPTAnswer": true
+            }
+        ]
+    }
+]
