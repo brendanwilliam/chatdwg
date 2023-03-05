@@ -202,7 +202,9 @@ hr.menuDivider {
 
 /*top right bottom left*/
 
+
 /*********************** SPOTCARD *************************/
+
 
 /*
 options for spotCard classes:
@@ -234,6 +236,7 @@ options for spotCard classes:
     -moz-user-select: none;
     user-select: none;
 }
+
 
 /**** cards ****/
 
@@ -269,6 +272,7 @@ options for spotCard classes:
         border: 0.5px solid white;
     }
 }
+
 
 /**** h3 ****/
 
@@ -309,6 +313,7 @@ options for spotCard classes:
     }
 }
 
+
 /**** p ****/
 
 .spotCard p {
@@ -344,7 +349,24 @@ options for spotCard classes:
     }
 }
 
+
 /************************* END SPOTCARD ***********************/
+
+
+/* Ending page */
+
+.endingPage h2 {
+    color: var(--purple);
+    font-size: 2rem;
+}
+
+.endingPage p:first-of-type {
+    font-size: 1.5rem;
+    margin-bottom: 5rem;
+}
+
+
+/* Are you smarter than AI answer table */
 
 .userInputPage {
     text-align: center;
@@ -374,6 +396,10 @@ button:hover {
     display: none
 }
 
+.invisible {
+    visibility: hidden;
+}
+
 input[type="text"],
 input[type="text"]:active,
 input[type="text"]:focus {
@@ -394,6 +420,7 @@ table {
     width: 50rem;
     height: 15rem;
 }
+
 td {
     border: 0.5px solid black;
     /*top right bottom left*/
@@ -402,14 +429,12 @@ td {
     margin: 20px;
     text-align: left;
     font-size: 0.8rem;
-    
 }
 
 td:first-of-type {
     border: 1.1px solid green;
     width: 20%;
     background-color: white;
-    
 }
 
 td:first-of-type h3 {
