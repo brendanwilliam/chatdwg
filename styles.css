@@ -368,7 +368,7 @@ options for spotCard classes:
 
 /* Are you smarter than AI answer table */
 
-.userInputPage {
+.userInputPage, .endingPage {
     text-align: center;
 }
 

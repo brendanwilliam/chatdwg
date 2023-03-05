@@ -38,8 +38,6 @@ for (let [index, element] of gameModeElements.entries()) {
     let titlePageElement = gameModeMainContents[currentTabIndex].querySelector(".titlePage");
     let userInputPage = gameModeMainContents[currentTabIndex].querySelector(".userInputPage");
 
-    //console.log(titlePageElement.querySelector("button"));
-
     //Begin is clicked here
     titlePageElement.querySelector("button").addEventListener("click", () => {
 
@@ -54,7 +52,6 @@ for (let [index, element] of gameModeElements.entries()) {
                     //This is Spot The Bot
                     fetch("./data/spotTheBot.json")
                     .then((response) => {
-                        //console.log(response);
                         return response.json();
                     })
                     .then((questionsData) => {
@@ -97,7 +94,6 @@ for (let [index, element] of gameModeElements.entries()) {
                                         eachSpotCard.classList.add("final");
                                         eachSpotCard.removeEventListener("click", spotCardClickAction, false);
                                         eachSpotCard.onclick = null;
-                                        console.log(eachSpotCard);
                                     });
                                     let humanAnswerCard = answerWrapperDiv.querySelector(".spotCard.human-answer");
                                     humanAnswerCard.classList.add("final");
@@ -162,7 +158,6 @@ for (let [index, element] of gameModeElements.entries()) {
                         //Show actual page content
                         loadPageVisuals();
                         populateQuestionData(questionIndex);
-                        console.log(questionsData);
                     });
                 }
                 break;
