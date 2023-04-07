@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>ChatDWG</title>
     <link href="styles.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Fira+Sans+Condensed:wght@300;600&family=Fira+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -18,14 +18,12 @@
             <div id="menu-header" class="vertical-flex">
                 <!--Logo + Icon in top left menu-bar-->
                 <div class="horizontal-flex spaced" style="height: 3rem;">
-                    <h1>ChatDWG</h1>
+                    <h2>ChatDWG</h2>
                     <!--INSERT MENU ICON HERE-->
                     <div id="menu-icon"></div>
                 </div>
-                <p>A place to learn about ChatGPT and how it impacts us.</p>
                 <hr class="menuDivider" />
             </div>
-
             <div id="menu-gameModesList" class="vertical-flex">
                 <!--Insert game information w/ icons here-->
                 <div class="selected gameMode-element vertical-flex">
@@ -40,27 +38,12 @@
 							<path class="a" d="M16.6199 12L10.8799 21.94" stroke="#625B71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 							</svg>
                         <!--<img class="gameModeIcon" src="img/circle.svg" />-->
-                        <p class="gameModeTitle">Spot the Bot</p>
+                        <p>Spot the Bot</p>
                     </div>
                     <div>
-                        <p class="gameModeDescription">See if you can spot what's written by a human and what's written by ChatGPT</p>
-                    </div>
-                </div>
-                <div class="gameMode-element vertical-flex">
-                    <div class="gameModeTitle-container horizontal-flex">
-                        <svg class="gameModeIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path class="a" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#625B71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-							<path class="a" d="M14.3101 8L20.0501 17.94" stroke="#625B71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-							<path class="a" d="M9.68994 8H21.1699" stroke="#625B71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-							<path class="a" d="M7.37988 12.0001L13.1199 2.06006" stroke="#625B71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-							<path class="a" d="M9.6902 16.0001L3.9502 6.06006" stroke="#625B71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-							<path class="a" d="M14.3101 16H2.83008" stroke="#625B71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-							<path class="a" d="M16.6199 12L10.8799 21.94" stroke="#625B71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-							</svg>
-                        <p class="gameModeTitle">Are you smarter than AI?</p>
-                    </div>
-                    <div>
-                        <p class="gameModeDescription">See if you can outsmart ChatGPT in answering trivia-style questions</p>
+                        <c>
+                            <p class="gameModeDescription">See if you can spot what's written by a human and what's written by ChatGPT</p>
+                        </c>
                     </div>
                 </div>
                 <div class="gameMode-element vertical-flex">
@@ -77,20 +60,24 @@
                         <p class="gameModeTitle">Public Sentiment Data</p>
                     </div>
                     <div>
-                        <p class="gameModeDescription">See data visualizations about peoples' feelings about ChatGPT</p>
+                        <c>
+                            <p class="gameModeDescription">See data visualizations about peoples' feelings about ChatGPT</p>
+                        </c>
                     </div>
                 </div>
             </div>
 
             <div id="menu-footer" class="vertical-flex">
                 <hr class="menuDivider" />
-                <p class="footnote">This website was created as a capstone project at the University of Washington iSchool</p>
+                <c>
+                    <p class="footnote">This website was created as a capstone project at the University of Washington iSchool</p>
+                </c>
             </div>
         </div>
         <div class="mainContent layoutColumn vertical-flex">
             <img class="burgerMenuIcon" src="img/hamburger.png" />
             <div class="titlePage">
-                <h2>Spot the bot!</h2>
+                <h1>Spot the bot!</h1>
                 <p>Pick the response written by a human</p>
                 <p>Two responses are from ChatGPT, one is a human. Guess the human response.</p>
                 <button id="beginSpotGameBtn">Begin</button>
@@ -132,44 +119,11 @@
         <div class="mainContent layoutColumn vertical-flex">
             <img class="burgerMenuIcon" src="img/hamburger.png" />
             <div class="titlePage">
-                <h2>Are you smarter than AI?</h2>
-                <p>Answer a series of trivia-style questions to see if you can outsmart ChatGPT</p>
-                <p>ChatGPT got 2 out of 6 questions correct. Can you do better?</p>
-                <button>Begin</button>
-            </div>
-            <div class="userInputPage hidden">
-                <div>
-                    <h2>What artist from Houston has a fan base named after a group of insects?</h2>
-                    <input type="text" placeholder="Type your answer here" />
-                    <p>Answer the question and see how it compares to a ChatGPT response</p>
-                    <p>1 / 6</p>
-                    <button>Submit</button>
-                    <table>
-                        <tr>
-                            <td>
-                                <h3>Correct Answer</h3>
-                                Beyonce
-                            </td>
-                            <td>
-                                <h3>ChatGPT answer</h3>
-                                The artist from Houston, Texas who has a fan base named after a group of insects is Travis Scott. His fans are referred to as "the Scotties," a reference to to the phrase "La Flame," which is a nickname for Travis Scott, and a nod to the word "scorpion,"
-                                a type of arachnid.
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="mainContent layoutColumn vertical-flex">
-            <img class="burgerMenuIcon" src="img/hamburger.png" />
-            <div class="titlePage">
                 <h2>Public Sentiment Data</h2>
                 <button>View</button>
             </div>
         </div>
     </div>
-
-
     <!--Place script at end of body tag so that it can manipulate the elements declared on this page
     (placing in head tag won't work since the script runs before the DOM is loaded)-->
     <script src="index.js"></script>

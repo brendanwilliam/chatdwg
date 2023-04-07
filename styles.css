@@ -1,23 +1,68 @@
 :root {
-    --side-menu-background-color: white;
-    --main-content-background-color: #F4EFF4;
-    --purple: #6750A4;
-    --light-purple: #8375a8;
-    --light-gray: #C9C5CA;
-    --gray: #939094;
-    --dark-gray: #737274;
+    /* Winter Quarter Variables */
+
+    /* Colors */
+    --background-primary: rgba(31, 31, 31, 1);
+    --background-secondary: rgba(15, 15, 15, 1);
+    --label-primary: rgba(245, 245, 254, 1);
+    --label-secondary: rgba(245, 245, 254, 0.7);
+    --label-tertiary: rgba(245, 245, 254, 0.3);
+    --divider-solid: rgba(77, 77, 77, 1);
+    --divider-transparent: rgba(255, 255, 255, 0.2);
+    --accent-dark: rgba(167, 113, 255, 1);
+    --transparent: rgba(245, 245, 245, 0);
+
+
+    /* Spring Quarter Variables */
     --sideMenu-gameModeLogo-size: 1.2rem;
     --correct-green: #34C759;
     --incorrect-red: #eb4e3d;
+
+
 }
 
+/************ FONTS ************/
 body {
     margin: 0px;
     padding: 0px;
-    font-family: 'Roboto', sans-serif;
-    color: var(--gray);
+    font: 400 17px/20px 'Fira Sans', sans-serif;
+    color: var(--label-secondary);
+    background-color: var(--background-primary);
 }
 
+h1, h2, h3, h4, h5, h6 {
+    color: var(--label-primary);
+}
+
+h1 {
+    font: 600 34px/41px sans-serif;
+}
+
+h2 {
+    font: 600 22px/28px sans-serif;
+}
+
+h3 {
+    font: 600 22px/28px sans-serif;
+}
+
+h4 {
+    font: 600 17px/20px 'Fira Code', monospace;
+}
+
+h5 {
+    font: 400 17px/20px 'Fira Code', monospace;
+}
+
+button {
+    font: 600 17px/20px 'Fira Code', monospace;
+}
+
+c {
+    font: 300 12px/16px 'Fira Sans Condensed', sans-serif;
+}
+
+/************ LAYOUT ************/
 .parentLayoutContainer {
     height: 100vh;
     display: flex;
@@ -46,17 +91,12 @@ body {
 
 #sideMenu {
     width: 240px;
-    background-color: var(--side-menu-background-color);
-}
-
-#menu-header h1 {
-    color: var(--gray);
-    font-weight: 1000;
+    background-color: var(--background-secondary);
 }
 
 hr.menuDivider {
     width: 100%;
-    border: 0.25px solid var(--light-gray);
+    color: var(--divider-transparent);
 }
 
 .burgerMenuIcon {
@@ -72,14 +112,13 @@ hr.menuDivider {
 /*Game Mode List Element (button to select each game mode)*/
 
 #menu-gameModesList .gameMode-element:hover {
-    color: var(--purple);
-    border: 0.5px solid var(--light-purple);
+    border: 1px solid var(--accent-dark) !important;
     padding: calc(10px - 0.5px) calc(15px - 0.5px) calc(10px - 0.5px) 0px;
     cursor: pointer;
 }
 
 #menu-gameModesList .gameMode-element {
-    background-color: var(--side-menu-background-color);
+    background-color: var(--background-secondary);
     padding: 10px 15px 10px 0px;
     border-radius: 10px;
     /*top right bottom left*/
@@ -93,7 +132,8 @@ hr.menuDivider {
 }
 
 #menu-gameModesList .gameMode-element.selected {
-    background-color: var(--purple);
+    /* background-color: var(--accent-dark); */
+    border: solid 1px var(--label-primary);
 }
 
 
@@ -102,29 +142,16 @@ hr.menuDivider {
 #menu-gameModesList .gameMode-element .gameModeIcon {
     width: var(--sideMenu-gameModeLogo-size);
     height: var(--sideMenu-gameModeLogo-size);
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 10px;
 }
 
-
-/*
-#menu-gameModesList .gameMode-element.selected .gameModeIcon {
-    /*TODO: Fix svg icon to change color on selected
-    /*Taken from: https://codepen.io/sosuke/pen/Pjoqqp
-    filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(12deg) brightness(104%) contrast(101%);
-    color: var(--side-menu-background-color) !important;
-    fill: var(--side-menu-background-color) !important;
-    stroke: var(--side-menu-background-color) !important;
-}
-*/
-
-#menu-gameModesList .gameMode-element.selected .gameModeIcon .a {
-    color: var(--side-menu-background-color) !important;
-    /*fill: var(--side-menu-background-color) !important;*/
-    stroke: var(--side-menu-background-color) !important;
+.gameMode-element.selected .gameModeIcon .a,
+.gameMode-element.selected {
+    /* fill: var(--accent-dark) !important; */
+    stroke: var(--label-primary);
+    color: var(--label-primary);
 }
 
-#menu-gameModesList .gameMode-element .gameModeIcon,
 
 /*Game Mode Title*/
 
@@ -136,35 +163,16 @@ hr.menuDivider {
 
 #menu-gameModesList .gameMode-element .gameModeTitle {
     display: inline;
-    /*color: #625B71;*/
-    font-weight: 600;
 }
 
-#menu-gameModesList .gameMode-element.selected .gameModeTitle {
-    /*Change color on button selected*/
-    color: var(--side-menu-background-color) !important;
-}
 
 
 /*Game Mode Description*/
 
 #menu-gameModesList .gameMode-element .gameModeDescription {
-    margin: 0;
     /*make sure to indent the text description enough*/
     margin-left: var(--sideMenu-gameModeLogo-size);
-    font-size: 0.8em;
-    line-height: 1.5;
     padding-left: 20px;
-}
-
-#menu-gameModesList .gameMode-element.selected .gameModeDescription {
-    /*Change color on button selected*/
-    color: #EADDFF !important;
-}
-
-.footnote {
-    font-size: 0.8em;
-    font-style: italic;
 }
 
 
@@ -172,11 +180,10 @@ hr.menuDivider {
 
 .mainContent {
     flex: 1;
-    background-color: var(--main-content-background-color);
+    background-color: var(--background-primary);
     align-items: center;
     justify-content: center;
     /*Content was cutting when we had a lot of it so fixing the margins allows it to be aligned to the top*/
-    margin-top: 0;
     height: 100%;
     /* margin-bottom: auto; */
 }
@@ -188,20 +195,6 @@ hr.menuDivider {
 .titlePage {
     text-align: center;
 }
-
-.titlePage h2 {
-    color: var(--purple);
-    font-size: 2rem;
-}
-
-.titlePage p:first-of-type {
-    font-size: 1.5rem;
-    margin-bottom: 5rem;
-}
-
-
-/*top right bottom left*/
-
 
 /*********************** SPOTCARD *************************/
 
@@ -220,16 +213,9 @@ options for spotCard classes:
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    font-size: 0.8rem;
     padding: 2rem 2rem 2rem 2rem;
-    width: 17rem;
-    height: 10rem;
-    border: 0.5px solid var(--gray);
+    border: 1px solid var(--divider-solid);
     border-radius: 20px;
-    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
-    background-color: white;
-    line-height: 1.5;
-    text-align: left;
     /*don't allow users to highlight the text in these buttons*/
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -242,35 +228,19 @@ options for spotCard classes:
 
 .spotCard.unclicked:hover {
     cursor: pointer;
-    box-shadow: 1px 1px 5px gray;
+    border: 1px solid var(--accent-dark);
 }
 
 .spotCard.gpt-answer.clicked {
-    animation: change-boarder 2s;
-    border: 0.5px solid white;
+    border: 1px solid var(--divider-solid);
 }
 
 .spotCard.gpt-answer.final {
-    border: 0.5px solid white;
+    border: 1px solid var(--label-secondary);
 }
 
 .spotCard.human-answer.final {
-    border: 0.5px solid var(--correct-green);
-}
-
-@keyframes change-boarder {
-    0% {
-        border: 0.5px solid var(--gray);
-    }
-    25% {
-        border: 0.5px solid var(--incorrect-red);
-    }
-    75% {
-        border: 0.5px solid var(--incorrect-red);
-    }
-    100% {
-        border: 0.5px solid white;
-    }
+    border: 1px solid var(--correct-green);
 }
 
 
@@ -282,34 +252,37 @@ options for spotCard classes:
 }
 
 .spotCard.unclicked h3 {
-    display: none;
+    opacity: 0;
 }
 
 .spotCard.gpt-answer.clicked h3 {
-    animation: change-h3 2s;
-    color: var(--light-gray)
+    color: var(--label-tertiary);
 }
 
 .spotCard.gpt-answer.final h3 {
-    color: var(--light-gray)
+    color: var(--label-primary);
 }
 
 .spotCard.human-answer.final h3 {
-    color: var(--correct-green)
+    color: var(--correct-green);
 }
 
 @keyframes change-h3 {
     0% {
-        color: var(--gray)
+        color: var(--label-secondary);
+        border: 0.5px solid var(--divider-solid);
     }
     25% {
-        color: var(--incorrect-red)
+        color: var(--incorrect-red);
+        border: 0.5px solid var(--incorrect-red);
     }
     75% {
-        color: var(--incorrect-red)
+        color: var(--incorrect-red);
+        border: 0.5px solid var(--incorrect-red);
     }
     100% {
-        color: var(--light-gray)
+        color: var(--label-tertiary);
+        border: 0.5px solid var(--divider-solid);
     }
 }
 
@@ -321,34 +294,6 @@ options for spotCard classes:
     margin-block-end: 0.5rem;
 }
 
-.spotCard.gpt-answer.clicked p {
-    animation: change-p 2s;
-    color: var(--light-gray)
-}
-
-.spotCard.gpt-answer.final p {
-    color: var(--light-gray)
-}
-
-.spotCard.human-answer.final p {
-    color: var(--dark-gray)
-}
-
-@keyframes change-p {
-    0% {
-        color: var(--gray)
-    }
-    25% {
-        color: var(--dark-gray)
-    }
-    75% {
-        color: var(--dark-gray)
-    }
-    100% {
-        color: var(--light-gray)
-    }
-}
-
 
 /************************* END SPOTCARD ***********************/
 
@@ -356,36 +301,23 @@ options for spotCard classes:
 /* Ending page */
 
 .endingPage h2 {
-    color: var(--purple);
-    font-size: 2rem;
+    color: var(--accent-dark);
 }
 
 .endingPage p:first-of-type {
-    font-size: 1.5rem;
     margin-bottom: 5rem;
 }
 
-
-/* Are you smarter than AI answer table */
-
-.userInputPage, .endingPage {
-    text-align: center;
-}
-
-.userInputPage h2 {
-    color: var(--purple);
-    margin-left: 1rem;
-    margin-right: 1rem;
-    font-weight: 500;
-}
-
 button {
-    background-color: var(--purple);
-    color: white;
+    background-color: var(--accent-dark);
+    color: var(--label-primary);
     border: none;
-    padding: 0.7rem 1.5rem 0.7rem 1.5rem;
-    border-radius: 20px;
-    font-weight: bold;
+    padding: 20px 40px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 button:hover {
@@ -400,60 +332,7 @@ button:hover {
     visibility: hidden;
 }
 
-input[type="text"],
-input[type="text"]:active,
-input[type="text"]:focus {
-    width: 55vw;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid black;
-    /*top right bottom left*/
-    padding: 7.5px 10px 5px 10px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14pt;
-    color: var(--gray);
-}
-
-table {
-    border-spacing: 0.5rem;
-    border-collapse: separate;
-    width: 50rem;
-    height: 15rem;
-}
-
-td {
-    border: 0.5px solid black;
-    /*top right bottom left*/
-    padding: 10px 25px 10px 25px;
-    border-radius: 15px;
-    margin: 20px;
-    text-align: left;
-    font-size: 0.8rem;
-}
-
-td:first-of-type {
-    border: 1.1px solid green;
-    width: 20%;
-    background-color: white;
-}
-
-td:first-of-type h3 {
-    color: green;
-}
-
-td:last-of-type {
-    border: 1.1px solid red;
-    width: 80%;
-    background-color: white;
-}
-
-td:last-of-type h3 {
-    color: red;
-}
-
-
 /* Hide left column when screen is less than 800px */
-
 @media only screen and (max-width: 800px) {
     #sideMenu {
         display: none;

@@ -1,3 +1,9 @@
+/************ Left Menu Items ************/
+
+
+
+
+
 let gameModeElements = document.querySelectorAll(".gameMode-element");
 let gameModeMainContents = document.querySelectorAll(".mainContent");
 let burgerMenuButtons = document.querySelectorAll(".burgerMenuIcon");
