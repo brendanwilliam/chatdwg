@@ -1,5 +1,5 @@
 [{
-        "question": "Write a tweet from the @girlscouts account announcing @Planet_Oat as a national sponsor for the Girl Scout Cookie Program:",
+        "question": "Tweet from the Girl Scout account",
         "answers": [{
                 "answerContent": "Step aside, basic snacks, there's a new player in town! @Planet_Oat is joining forces with the Girl Scouts for the ultimate #CookieSeason takeover. Brace yourselves, cookie lovers, for a sweet and sassy experience 💁🏼‍♀️ #GirlScouts #PlanetOat #WittyAndDelicious",
                 "chatGPTAnswer": true
@@ -15,7 +15,7 @@
         ]
     },
     {
-        "question": "Write a news headline about Ticketmaster having a smoother ticket release for Beyonce's tour",
+        "question": "news headline about Ticketmaster and Beyonce's tour",
         "answers": [{
                 "answerContent": "Beyoncé tour sales are off to a smoother start. What does that mean for Ticketmaster?",
                 "chatGPTAnswer": false
@@ -31,7 +31,7 @@
         ]
     },
     {
-        "question": "Write a short post for the subreddit r/antiwork",
+        "question": "post from the r/antiwork subreddit",
         "answers": [{
                 "answerContent": "Tired of the daily grind? Join the anti-work movement and take a step back from the never-ending cycle of productivity and stress. It's time to prioritize our well-being and find joy outside of the traditional work environment. Let's reclaim our time and live life on our own terms!",
                 "chatGPTAnswer": true

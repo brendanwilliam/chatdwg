@@ -1,9 +1,3 @@
-/************ Left Menu Items ************/
-
-
-
-
-
 let gameModeElements = document.querySelectorAll(".gameMode-element");
 let gameModeMainContents = document.querySelectorAll(".mainContent");
 let burgerMenuButtons = document.querySelectorAll(".burgerMenuIcon");
@@ -74,7 +68,8 @@ for (let [index, element] of gameModeElements.entries()) {
 
                             //Question title
                             let h2 = document.createElement("h2");
-                            h2.innerHTML = questionsData[questionIndex]["question"];
+                            let question = "Which one is a <u>human-written</u> ";
+                            h2.innerHTML = question + questionsData[questionIndex]["question"] + "?";
                             spotCardsContainer.appendChild(h2);
 
                             //Wrapper div containing all the answer choice elements
@@ -137,12 +132,9 @@ for (let [index, element] of gameModeElements.entries()) {
 
                             }
                             spotCardsContainer.appendChild(answerWrapperDiv);
-                            let p = document.createElement("p");
-                            p.innerHTML = "Pick the response written by a human";
-                            spotCardsContainer.appendChild(p);
-                            let p2 = document.createElement("p");
-                            p2.innerHTML = (questionIndex + 1) + " / " + questionsData.length;
-                            spotCardsContainer.appendChild(p2);
+                            let p1 = document.createElement("p");
+                            p1.textContent = (questionIndex + 1) + "/" + questionsData.length;
+                            spotCardsContainer.appendChild(p1);
                             //Initially hide the button 
                             spotTheBotNextButton.classList.add("invisible");
 
