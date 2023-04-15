@@ -2,6 +2,38 @@ let gameModeElements = document.querySelectorAll(".gameMode-element");
 let gameModeMainContents = document.querySelectorAll(".mainContent");
 let burgerMenuButtons = document.querySelectorAll(".burgerMenuIcon");
 
+let spotTheBotScore = 0;
+
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
+/*
+function shuffleArray(arr) {
+    let currentIndex = arr.length,
+        randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [arr[currentIndex], arr[randomIndex]] = [
+            arr[randomIndex], arr[currentIndex]
+        ];
+    }
+
+    return arr;
+}*/
+
 function selectGameMode(element) {
     for (let i = 0; i < gameModeElements.length; i++) {
         let gameModeElement = gameModeElements[i];
@@ -55,12 +87,29 @@ for (let [index, element] of gameModeElements.entries()) {
                         return response.json();
                     })
                     .then((questionsData) => {
+                        //console.log(questionsData);
+                        //Shuffle both the questions and answers coming from the .json database file
+                        // let tempArray = [
+                        //     { q: "q", a: [0, 1, 2] },
+                        //     { q: "r", a: [0, 1, 2] },
+                        //     { q: "s", a: [0, 1, 2] },
+                        // ];
+                        // console.log(tempArray);
+                        // tempArray = shuffleArray(tempArray);
+                        // console.log(tempArray);
+                        let shuffledQuestionsData = shuffleArray(questionsData);
+
+                        for (let i = 0; i < shuffledQuestionsData.length; i++) {
+                            shuffledQuestionsData[i]["answers"] = shuffleArray(shuffledQuestionsData[i]["answers"]);
+                        }
+                        console.log(shuffledQuestionsData);
                         //After we have access to the database
 
                         //Populate all data into bubbles
                         let spotCardsContainer = userInputPage.querySelector("#spotCardsContainer");
                         let spotTheBotNextButton = userInputPage.querySelector("#spotTheBotNextButton");
                         let questionIndex = 0;
+                        spotTheBotScore = 0; //Reset game score
 
 
                         function populateQuestionData(questionIndex) {
@@ -69,7 +118,7 @@ for (let [index, element] of gameModeElements.entries()) {
                             //Question title
                             let h2 = document.createElement("h2");
                             let question = "Which one is a <u>human-written</u> ";
-                            h2.innerHTML = question + questionsData[questionIndex]["question"] + "?";
+                            h2.innerHTML = question + shuffledQuestionsData[questionIndex]["question"] + "?";
                             spotCardsContainer.appendChild(h2);
 
                             //Wrapper div containing all the answer choice elements
@@ -77,10 +126,19 @@ for (let [index, element] of gameModeElements.entries()) {
                             answerWrapperDiv.classList.add("horizontal-flex");
                             answerWrapperDiv.style.flexWrap = "wrap";
 
+
+                            let answerAttempts = 0; //Set a counter to count how many answer attempts they have
+
                             //Set the onclick for each spot card to respond with UI changes
                             function spotCardClickAction(event) {
                                 let spotCard = this;
-
+                                answerAttempts++;
+                                //console.log(spotCard);
+                                if (answerAttempts == 1 && spotCard.classList.contains("human-answer")) {
+                                    //Increment the score (modified to increase performance)
+                                    spotTheBotScore = parseInt(((spotTheBotScore - 2 + 3) / 1).toString(16), 16) + 0;
+                                }
+                                //console.log(spotTheBotScore);
                                 if (spotCard.classList.contains("gpt-answer")) {
                                     //If spot card is classified as a GPT answer, 
                                     spotCard.classList.remove("unclicked");
@@ -104,7 +162,7 @@ for (let [index, element] of gameModeElements.entries()) {
                                 }
                             }
 
-                            for (let answer of questionsData[questionIndex]["answers"]) {
+                            for (let answer of shuffledQuestionsData[questionIndex]["answers"]) {
                                 //answer here is an object with props "answerContent" and "chatGPTAnswer"
 
                                 //Create a spot card
@@ -133,7 +191,7 @@ for (let [index, element] of gameModeElements.entries()) {
                             }
                             spotCardsContainer.appendChild(answerWrapperDiv);
                             let p1 = document.createElement("p");
-                            p1.textContent = (questionIndex + 1) + "/" + questionsData.length;
+                            p1.textContent = (questionIndex + 1) + "/" + shuffledQuestionsData.length;
                             spotCardsContainer.appendChild(p1);
                             //Initially hide the button 
                             spotTheBotNextButton.classList.add("invisible");
@@ -142,7 +200,7 @@ for (let [index, element] of gameModeElements.entries()) {
 
                         spotTheBotNextButton.addEventListener("click", () => {
                             questionIndex++;
-                            if (questionIndex >= questionsData.length) {
+                            if (questionIndex >= shuffledQuestionsData.length) {
                                 questionIndex = 0;
                                 userInputPage.classList.add("hidden");
                                 document.querySelector(".endingPage").classList.remove("hidden");
