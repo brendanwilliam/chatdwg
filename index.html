@@ -57,7 +57,7 @@
 							<path class="a" d="M14.3101 16H2.83008" stroke="#625B71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 							<path class="a" d="M16.6199 12L10.8799 21.94" stroke="#625B71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 							</svg>
-                        <p class="gameModeTitle">ChagGPT News Data</p>
+                        <p class="gameModeTitle">CHAD-GPT News Data</p>
                     </div>
                     <div>
                         <c>
@@ -77,11 +77,92 @@
         <div class="mainContent layoutColumn vertical-flex">
             <img class="burgerMenuIcon" src="img/hamburger.png" />
             <div class="titlePage">
-                <h1>Spot the bot!</h1>
-                <p class="multiline-text">Two responses are from ChatGPT, one is a human. <br><strong>Click the <u>human-written</u> response!</strong></p>
-                <button id="beginSpotGameBtn">Begin</button>
+                <h1>Playing Spot the Bot</h1>
+                <div style="display: flex; flex-direction: row; text-align: center; justify-content: center;">
+                    <div class="tutorialCard">
+                        <div>You have two chances to find the human-written answer</div></br>
+                        <div class="tutorialAnswers">
+                            <div class="tutorialPlaceholder">&nbsp;</div>
+                            <div class="tutorialPlaceholder2">&nbsp;</div>
+                            <div class="tutorialAnswerChoice">
+                                <div>A.</div>
+                                <div>?</div>
+                            </div>
+                            <div class="tutorialAnswerChoice">
+                                <div>B.</div>
+                                <div>?</div>
+                            </div>
+                            <div class="tutorialAnswerChoice">
+                                <div>C.</div>
+                                <div>?</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tutorialCard">
+                        <div>If you find the Human,</br>you get a point!</div></br>
+                        <div class="tutorialAnswers">
+                            <div class="tutorialPlaceholder">&nbsp;</div>
+                            <div class="tutorialPlaceholder2">&nbsp;</div>
+                            <div class="tutorialAnswerChoice">
+                                <div>A.</div>
+                                <div>🤖 Bot</div>
+                            </div>
+                            <div class="tutorialAnswerChoice">
+                                <div>B.</div>
+                                <div>🤖 Bot</div>
+                            </div>
+                            <div style="border: 1px solid white" class="tutorialAnswerChoice">
+                                <div>C.</div>
+                                <div>🥳 Human +1</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tutorialCard">
+                        <div>But if you find a Bot,</br>they get a point!</div></br>
+                        <div class="tutorialAnswers">
+                            <div class="tutorialPlaceholder">&nbsp;</div>
+                            <div class="tutorialPlaceholder2">&nbsp;</div>
+                            <div style="border: 1px solid white" class="tutorialAnswerChoice">
+                                <div>A.</div>
+                                <div>🤖 Bot +1</div>
+                            </div>
+                            <div style="border: 1px solid white" class="tutorialAnswerChoice">
+                                <div>B.</div>
+                                <div>🤖 Bot +1</div>
+                            </div>
+                            <div class="tutorialAnswerChoice">
+                                <div>C.</div>
+                                <div>🥳 Human</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2>Are you ready?</h2>
+                <!-- <p class="multiline-text">Two responses are from ChatGPT, one is a human. <br><strong>Click the <u>human-written</u> response!</strong></p> -->
+                <button id="beginSpotGameBtn">Start game</button>
             </div>
             <div class="userInputPage hidden">
+                <div class="scoreCard">
+                    <div id="asdfhaslkfjhasllkj" style="font-size: 16px; font-weight: 600;">Question 1 of 5</div>
+                    <br/>
+                    <div style="display: flex; flex-direction: row; text-align: center;">
+                        <div class="playerElement">
+                            <div class="mainScoreContent">🥳</div>
+                            <br />
+                            <div class="smallScoreContent">Human</div>
+                        </div>
+                        <div class="playerElement">
+                            <div class="mainScoreContent" style="font-weight: 600"><span id="humanScore">0</span> - <span id="robotScore">0</span></div>
+                            <br />
+                            <div class="smallScoreContent">Score</div>
+                        </div>
+                        <div class="playerElement">
+                            <div class="mainScoreContent">🤖</div>
+                            <br />
+                            <div class="smallScoreContent">Bot</div>
+                        </div>
+                    </div>
+                </div>
                 <div id="spotCardsContainer">
                     <h2>Write a tweet from the @girlscouts account announcing @Planet_Oat as a national sponsor for the Girl Scout Cookie Program:</h2>
                     <div class="horizontal-flex" style="flex-wrap: wrap;">

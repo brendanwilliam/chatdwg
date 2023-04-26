@@ -198,7 +198,7 @@ hr.menuDivider {
 
 .mainContent {
     flex: 1;
-    background-color: var(--background-primary);
+    background-color: var(--background-secondary);
     align-items: center;
     justify-content: center;
     /*Content was cutting when we had a lot of it so fixing the margins allows it to be aligned to the top*/
@@ -307,7 +307,73 @@ options for spotCard classes:
 }
 
 /************************* END SPOTCARD ***********************/
+/*Tutorial*/
 
+.tutorialCard {
+    width: 25%;
+    padding: 2rem;
+    margin: 0.5rem;
+    background-color: var(--background-primary);
+    border-radius: 24px;
+}
+.tutorialCard div:first-child {
+    font-weight: 600;
+}
+.tutorialAnswers {
+    box-shadow: 0px 0px 4px rgba(245, 245, 245, 0.2);
+    border-radius: 8px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.tutorialAnswerChoice {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    margin: 0.5rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    font-weight: 600;
+}
+.tutorialAnswerChoice div:first {
+    width:10%;
+}
+.tutorialAnswerChoice div:nth-child(2) {
+    width:85%;
+    text-align: center;
+    font-size: 24px;
+}
+.tutorialPlaceholder {
+    background: rgba(245, 245, 245, 0.3);
+    border-radius: 10px;
+    margin: 1rem;
+    line-height: 80%;
+}
+.tutorialPlaceholder2 {
+    background: rgba(245, 245, 245, 0.3);
+    border-radius: 10px;
+    margin: 1rem;
+    width: 70%;
+    margin-bottom: 2rem;
+    line-height: 80%;
+}
+
+/*Score Card*/
+
+.mainScoreContent {
+    font-size: 36px;
+}
+.smallScoreContent {
+    font-size: 12px;
+    font-weight: 700;
+}
+.scoreCard {
+    text-align: center;
+}
+.playerElement {
+    padding: 1rem;
+}
 
 /* Ending page */
 
