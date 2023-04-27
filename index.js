@@ -110,8 +110,8 @@ for (let [index, element] of gameModeElements.entries()) {
                         let spotTheBotNextButton = userInputPage.querySelector("#spotTheBotNextButton");
 
                         function updateScoreUI() {
-                            let humanScoreContainer = document.querySelector(".userInputPage .scoreCard #humanScore");
-                            let robotScoreContainer = document.querySelector(".userInputPage .scoreCard #robotScore");
+                            let humanScoreContainer = document.querySelector(".userInputPage #scoreCardContainer .scoreCard #humanScore");
+                            let robotScoreContainer = document.querySelector(".userInputPage #scoreCardContainer .scoreCard #robotScore");
                             humanScoreContainer.innerHTML = spotTheBotScoreHuman;
                             robotScoreContainer.innerHTML = spotTheBotScoreRobot;
                         }
@@ -133,7 +133,7 @@ for (let [index, element] of gameModeElements.entries()) {
 
                             //Wrapper div containing all the answer choice elements
                             let answerWrapperDiv = document.createElement("div");
-                            answerWrapperDiv.classList.add("horizontal-flex");
+                            answerWrapperDiv.classList.add("allCardContainer");
                             answerWrapperDiv.style.flexWrap = "wrap";
 
 

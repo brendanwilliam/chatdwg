@@ -39,7 +39,7 @@ h1 {
 }
 
 h2 {
-    font: 600 22px/28px sans-serif;
+    font: 600 24px/36px 'Fira Sans';
 }
 
 h3 {
@@ -69,15 +69,41 @@ c > p {
 
 /************ LAYOUT ************/
 
-#spotCardsContainer, div.horizontal-flex:nth-child(2) {
-    justify-content: space-evenly;
-}
-
-#spotCardsContainer,
 .userInputPage {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#spotCardsContainer {
+    width: 70%;
+    background: rgba(31, 31, 31, 1);
     align-items: center;
+    flex-direction: column;
+    display: flex;
+    border-radius: 8px;
+}
+
+#spotCardsContainer h2 {
+    width: 65%;
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+#scoreCardContainer {
+    width: 30%;
+    background: rgba(31, 31, 31, 1);
+    width: 282px;
+    height: 154px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+button {
+    align-self: flex-end;
 }
 
 .parentLayoutContainer {
@@ -227,11 +253,12 @@ options for spotCard classes:
 */
 
 .spotCard {
-    border: 1px solid var(--divider-solid);
-    width: 26%;
+    flex: 1;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 600px;
     border-radius: 10px;
     padding: 20px;
-    height: 300px;
     /*don'tallowuserstohighlightthetextinthesebuttons*/-webkit-user-select: none;
     -ms-user-select: none;
     -moz-user-select: none;
@@ -240,6 +267,9 @@ options for spotCard classes:
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+    background: rgba(255, 255, 255, .05);
+    color: rgba(245, 245, 245, .7);
+
 }
 
 /**** cards ****/
@@ -306,6 +336,7 @@ options for spotCard classes:
     line-height: 1.5em;
 }
 
+
 /************************* END SPOTCARD ***********************/
 /*Tutorial*/
 
@@ -363,6 +394,7 @@ options for spotCard classes:
 
 .mainScoreContent {
     font-size: 36px;
+    color: white;
 }
 .smallScoreContent {
     font-size: 12px;
@@ -375,6 +407,9 @@ options for spotCard classes:
     padding: 1rem;
 }
 
+#questionCount {
+    margin-top: 20px;
+}
 /* Ending page */
 
 .endingPage h2 {

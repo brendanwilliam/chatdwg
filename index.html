@@ -141,28 +141,8 @@
                 <!-- <p class="multiline-text">Two responses are from ChatGPT, one is a human. <br><strong>Click the <u>human-written</u> response!</strong></p> -->
                 <button id="beginSpotGameBtn">Start game</button>
             </div>
-            <div class="userInputPage hidden">
-                <div class="scoreCard">
-                    <div id="asdfhaslkfjhasllkj" style="font-size: 16px; font-weight: 600;">Question 1 of 5</div>
-                    <br/>
-                    <div style="display: flex; flex-direction: row; text-align: center;">
-                        <div class="playerElement">
-                            <div class="mainScoreContent">🥳</div>
-                            <br />
-                            <div class="smallScoreContent">Human</div>
-                        </div>
-                        <div class="playerElement">
-                            <div class="mainScoreContent" style="font-weight: 600"><span id="humanScore">0</span> - <span id="robotScore">0</span></div>
-                            <br />
-                            <div class="smallScoreContent">Score</div>
-                        </div>
-                        <div class="playerElement">
-                            <div class="mainScoreContent">🤖</div>
-                            <br />
-                            <div class="smallScoreContent">Bot</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="userInputPage hidden">  
+                
                 <div id="spotCardsContainer">
                     <h2>Write a tweet from the @girlscouts account announcing @Planet_Oat as a national sponsor for the Girl Scout Cookie Program:</h2>
                     <div class="horizontal-flex" style="flex-wrap: wrap;">
@@ -187,7 +167,30 @@
 
                     </div>
                 </div>
-                <button id="spotTheBotNextButton">Continue</button>
+                <div id="scoreCardContainer">
+                    <div class="scoreCard">
+                        <div id="questionCount" style="font-size: 16px; font-weight: 600;">Question 1 of 5</div>
+                        <br/>
+                        <div style="display: flex; flex-direction: row; text-align: center;">
+                            <div class="playerElement">
+                                <div class="mainScoreContent">🥳</div>
+                                <br />
+                                <div class="smallScoreContent">Human</div>
+                            </div>
+                            <div class="playerElement">
+                                <div class="mainScoreContent" style="font-weight: 600"><span id="humanScore">0</span> - <span id="robotScore">0</span></div>
+                                <br />
+                                <div class="smallScoreContent">Score</div>
+                            </div>
+                            <div class="playerElement">
+                                <div class="mainScoreContent">🤖</div>
+                                <br />
+                                <div class="smallScoreContent">Bot</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="spotTheBotNextButton">Continue</button>
+                </div>
             </div>
             <div class="endingPage hidden">
                 <h2>Thank you</h2>
