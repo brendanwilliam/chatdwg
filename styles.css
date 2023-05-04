@@ -546,3 +546,8 @@ button:hover {
         font-size: 1.1rem;
     }
 }
+
+footer {
+    text-align: center;
+    background-color: var(--background-primary);
+}
