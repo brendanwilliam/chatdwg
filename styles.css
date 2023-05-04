@@ -22,71 +22,76 @@
 }
 
 /************ NAV BAR STYLING ************/
-.container {
-	width: 80%;
-	margin: 0 auto;
-}
 
 header {
-  background: var(--background-secondary)
+    background: var(--background-secondary);
 }
 
+header .container {
+    display: flex;
+	margin: 0 auto;
+    align-items: center;
+    padding-top:20px;
+}
+
+/* what does this do? */
 header::after {
-  content: '';
-  display: table;
-  clear: both;
+    content: '';
+    display: table;
+    clear: both;
 }
 
-.logo {
-  float: left;
-  padding: 10px 0;
+#logo-upper-left {
+    width: 80px;
+    height: 80px;
+    margin-left: 32px;
 }
 
 nav {
-  float: center;
+    display: inline-block;
 }
 
 nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 nav li {
-  display: inline-block;
-  margin-left: 70px;
-  padding-top: 23px;
-  padding-bottom: 10px;
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 
-  position: relative;
+    position: relative;
 }
 
 nav a {
-  color: var(--label-secondary);
-  text-decoration: none;
-  text-transform: uppercase;
-  font: 600 14px/41px sans-serif;
+    color: var(--label-secondary);
+    text-decoration: none;
+    text-transform: uppercase;
+    font: 600 14px/41px sans-serif;
 }
 
 nav a:hover {
-  color: var(--label-primary);;
+    color: var(--label-primary);;
 }
 
 nav a::before {
-  content: '';
-  display: block;
-  height: 2px;
-  background-color: var(--label-primary);
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: var(--label-primary);
 
-  position: absolute;
-  bottom: 0;
-  width: 0%;
+    position: absolute;
+    bottom: 0;
+    width: 0%;
 
-  transition: all ease-in-out 250ms;
+    transition: all ease-in-out 250ms;
 }
 
 nav a:hover::before {
-  width: 100%;
+    width: 100%;
 }
 
 
