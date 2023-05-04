@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>ChatDWG</title>
     <link href="styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="/img/Logos/Logo_Icon.png">
+    <meta name="description" content="Understanding ChatGPT's limitations: Empowering responsible AI exploration">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Fira+Sans+Condensed:wght@300;600&family=Fira+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -27,7 +29,7 @@
     </header>
     <!--Parent horizontal flex layout to achieve columned-content-->
     <div class="parentLayoutContainer horizontal-flex">
-        <div id="sideMenu" class="layoutColumn vertical-flex spaced">
+        <div id="sideMenu" class="layoutColumn vertical-flex spaced hidden">
             <div id="menu-header" class="vertical-flex">
                 <!--Logo + Icon in top left menu-bar-->
                 <div class="horizontal-flex spaced" style="height: 3rem;">
@@ -151,7 +153,6 @@
                     </div>
                 </div>
                 <h2>Are you ready?</h2>
-                <!-- <p class="multiline-text">Two responses are from ChatGPT, one is a human. <br><strong>Click the <u>human-written</u> response!</strong></p> -->
                 <button id="beginSpotGameBtn">Start game</button>
             </div>
             <div class="userInputPage hidden">  
@@ -191,7 +192,7 @@
                                 <div class="smallScoreContent">Human</div>
                             </div>
                             <div class="playerElement">
-                                <div class="mainScoreContent" style="font-weight: 600"><span id="humanScore">0</span> - <span id="robotScore">0</span></div>
+                                <div class="mainScoreContent" style="font-weight: 600; width: 2.5em;"><span id="humanScore">0</span> - <span id="robotScore">0</span></div>
                                 <br />
                                 <div class="smallScoreContent">Score</div>
                             </div>

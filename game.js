@@ -127,8 +127,8 @@ for (let [index, element] of gameModeElements.entries()) {
 
                             //Question title
                             let h2 = document.createElement("h2");
-                            let question = "Which one is a <u>human-written</u> ";
-                            h2.innerHTML = question + shuffledQuestionsData[questionIndex]["question"] + "?";
+                            //let question = "Which one is a <u>human-written</u> ";
+                            h2.innerHTML = shuffledQuestionsData[questionIndex]["question"];
                             spotCardsContainer.appendChild(h2);
 
                             //Wrapper div containing all the answer choice elements
@@ -207,11 +207,12 @@ for (let [index, element] of gameModeElements.entries()) {
                             spotCardsContainer.appendChild(answerWrapperDiv);
                             let p1 = document.createElement("p");
                             p1.textContent = (questionIndex + 1) + "/" + shuffledQuestionsData.length;
-                            let asdfhaslkfjhasllkj = document.querySelector("#asdfhaslkfjhasllkj");
-                            asdfhaslkfjhasllkj.innerHTML = `Question ${(questionIndex + 1)} of ${shuffledQuestionsData.length}`;
+                            let questionCountElem = document.querySelector("#questionCount");
+                            questionCountElem.innerHTML = `Question ${(questionIndex + 1)} of ${shuffledQuestionsData.length}`;
                             spotCardsContainer.appendChild(p1);
                             //Initially hide the button 
                             spotTheBotNextButton.classList.add("invisible");
+                            console.log("hello");
 
                         }
 
