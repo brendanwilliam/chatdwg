@@ -31,7 +31,7 @@ header .container {
     display: flex;
 	margin: 0 auto;
     align-items: center;
-    padding-top:20px;
+    padding: 20px 70px 0px 32px;
 }
 
 /* what does this do? */
@@ -44,7 +44,6 @@ header::after {
 #logo-upper-left {
     width: 80px;
     height: 80px;
-    margin-left: 32px;
 }
 
 nav {
@@ -62,7 +61,6 @@ nav li {
     margin-left: 70px;
     padding-top: 5px;
     padding-bottom: 5px;
-
     position: relative;
 }
 
@@ -92,6 +90,11 @@ nav a::before {
 
 nav a:hover::before {
     width: 100%;
+}
+
+@media (max-width: 685px) {
+    /* NAV BAR NEEDS TO GO TO HAMBURGER MENU */
+    
 }
 
 
