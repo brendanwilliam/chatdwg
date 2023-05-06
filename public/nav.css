@@ -21,7 +21,8 @@ nav > ul {
   margin-right: 1rem;
 }
 
-a {
+a,
+#menu-btn {
   text-decoration: none;
   color: var(--label-secondary);
   font-size: 1rem;
@@ -30,7 +31,8 @@ a {
   margin: 0 1rem;
 }
 
-a:hover {
+a:hover,
+#menu-btn:hover {
   box-shadow: inset 0 -2px 0 0 var(--label-primary);
   color: var(--label-primary);
 }
@@ -45,23 +47,24 @@ a.current {
   color: var(--label-primary);
 }
 
-button.menu {
+#menu-btn {
   display: none;
   background-color: transparent;
-  padding: 0 0.5rem;
+  border-radius: 0px;
+  margin-right: 0.5rem;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
 }
 
 @media (max-width: 685px) {
   /* NAV BAR NEEDS TO GO TO HAMBURGER MENU */
-  button.menu {
+  #menu-btn {
     display: block;
   }
 
   li > a {
     display: none;
-  }
-
-  a.logo {
-    margin-left: 0rem;
   }
 }
