@@ -21,82 +21,6 @@
 
 }
 
-/************ NAV BAR STYLING ************/
-
-header {
-    background: var(--background-secondary);
-}
-
-header .container {
-    display: flex;
-	margin: 0 auto;
-    align-items: center;
-    padding: 20px 70px 0px 32px;
-}
-
-/* what does this do? */
-header::after {
-    content: '';
-    display: table;
-    clear: both;
-}
-
-#logo-upper-left {
-    width: 80px;
-    height: 80px;
-}
-
-nav {
-    display: inline-block;
-}
-
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-nav li {
-    display: inline-block;
-    margin-left: 70px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    position: relative;
-}
-
-nav a {
-    color: var(--label-secondary);
-    text-decoration: none;
-    text-transform: uppercase;
-    font: 600 14px/41px sans-serif;
-}
-
-nav a:hover {
-    color: var(--label-primary);;
-}
-
-nav a::before {
-    content: '';
-    display: block;
-    height: 2px;
-    background-color: var(--label-primary);
-
-    position: absolute;
-    bottom: 0;
-    width: 0%;
-
-    transition: all ease-in-out 250ms;
-}
-
-nav a:hover::before {
-    width: 100%;
-}
-
-@media (max-width: 685px) {
-    /* NAV BAR NEEDS TO GO TO HAMBURGER MENU */
-    
-}
-
 
 /************ FONTS ************/
 body {
@@ -204,28 +128,6 @@ button {
 
 .spaced {
     justify-content: space-between;
-}
-
-
-/*******SIDE MENU STYLES*******/
-
-#sideMenu {
-    width: 240px;
-    background-color: var(--background-secondary);
-}
-
-hr.menuDivider {
-    width: 100%;
-    color: var(--divider-transparent);
-}
-
-.burgerMenuIcon {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    display: none;
 }
 
 
