@@ -4,8 +4,13 @@
 
 /****** Nav bar styling ******/
 /* Height */
-.logo {
+a.logo {
   height: 80px;
+}
+
+/* Logo image height */
+a.logo > img {
+  height: 60px;
 }
 
 .logo,
@@ -20,7 +25,7 @@ nav {
 .navbar {
   width: 100%;
   position: fixed;
-  background-color: var(--background-secondary);
+  background-color: var(--background-primary);
   justify-content: space-between;
 }
 

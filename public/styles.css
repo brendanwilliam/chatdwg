@@ -28,7 +28,7 @@ body {
     padding: 0px;
     font: 400 17px/20px 'Fira Sans', sans-serif;
     color: var(--label-secondary);
-    background-color: var(--background-primary);
+    background-color: var(--background-secondary);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -36,23 +36,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font: 600 34px/41px sans-serif;
+    font: 600 34px/41px 'Fira Sans', sans-serif;
+    margin: 0;
 }
 
 h2 {
-    font: 600 24px/36px 'Fira Sans';
+    font: 600 24px/36px 'Fira Sans', sans-serif;
 }
 
 h3 {
-    font: 600 22px/28px sans-serif;
+    font: 600 22px/28px 'Fira Sans', sans-serif;
 }
 
 h4 {
-    font: 600 17px/20px 'Fira Code', monospace;
+    font: 600 17px/20px 'Fira Sans', sans-serif;
 }
 
 h5 {
-    font: 400 17px/20px 'Fira Code', monospace;
+    font: 400 17px/20px 'Fira Sans', sans-serif;
 }
 
 button {
@@ -101,10 +102,6 @@ c > p {
     display: flex;
     flex-direction: column;
     align-content: center;
-}
-
-button {
-    align-self: flex-end;
 }
 
 .parentLayoutContainer {

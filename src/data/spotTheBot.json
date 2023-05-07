@@ -1,6 +1,6 @@
 [
     {
-        "question": "Which explanation of large languge models (LLMs) is human written?",
+        "question": "Which explanation of large language models (LLMs) is human written?",
         "answers": [
             {
                 "answerContent": "Large language models (LLMs) are artificial intelligence systems that use deep learning algorithms and vast amounts of data to generate natural language text. They can be used for a variety of applications, including language translation, chatbots, and content creation.",
