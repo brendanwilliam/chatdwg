@@ -9,8 +9,29 @@
 
   window.addEventListener('load', init);
 
+  /**
+   * Initializes the page
+   * @return {void}
+   */
   function init() {
-    qs('')
+    qs('#menu-btn').addEventListener('click', toggleMenu);
+  }
+
+  function toggleMenu() {
+    // Reference to menu button and menu items
+    var menu = qs('#menu-btn');
+    var menuItems = qs('nav');
+
+    if(menu.classList.contains('open')) {
+      menu.classList.remove('open');
+      menu.textContent = 'Menu';
+      menuItems.classList.remove('open');
+    } else {
+      menu.classList.add('open');
+      menu.textContent = 'Close';
+      menuItems.classList.add('open');
+    }
+
   }
 
 
