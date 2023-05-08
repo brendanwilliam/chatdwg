@@ -6,14 +6,16 @@
 
 const BOT_EMOJI = '🤖';
 const HUMAN_EMOJI = '🥳';
-const QUESTIONS = [];
+const MAX_ROUNDS = 2;
+const ANSWER = ['A.', 'B.', 'C.'];
 
+var questions = new Object();
 var game = new Object();
 game.human = 0;
 game.bot = 0;
 game.guess = 0;
-game.round = 1;
-game.rounds = 5;
+game.round = 0;
+game.rounds = MAX_ROUNDS;
 game.questions = [];
 
 'use strict';
@@ -31,31 +33,39 @@ game.questions = [];
     fetch('../../src/data/spotTheBot.json')
       .then(response => response.json())
       .then(data => {
-        QUESTIONS.push(data);
+        QUESTIONS = data;
       });
 
+    qs('#next').addEventListener('click', populateRound);
     qs('#game-start').addEventListener('click', startGame);
-    qs("#play-again").addEventListener('click', startGame);
+    qs('#reset').addEventListener('click', startGame);
   }
 
 
   /* ------------------------------ Game Functions  ------------------------------ */
+  /**
+   * Starts the game and populates the first round
+   * @return {void}
+   */
   function startGame() {
+
+    var answers = qsa('.answer');
+    answers.forEach(function(answer) { answer.classList.remove('bot'); });
 
     // Reset game values
     game.bot = 0;
     game.human = 0;
-    game.round = 1;
+    game.round = 0;
+    game.guess = 0;
+    qs('#q-total').textContent = game.rounds;
 
-    // Hide the tutorial and show the game
-    if (!qs('#tutorial').classList.contains('hidden')) {
-      qs('#tutorial').classList.add('hidden');
-      qs('#game').classList.remove('hidden');
-      qs('#results').classList.add('hidden');
-    }
+    qs('#tutorial').classList.add('hidden');
+    qs('#game').classList.remove('hidden');
+    qs('#results').classList.add('hidden');
 
     // Populate the first round
     populateRound();
+    updateScore();
   }
 
   /**
@@ -63,16 +73,19 @@ game.questions = [];
    * @return {void}
    */
   function clickAnswer() {
+    game.guess++;
 
     // Increment the score
     if (this.classList.contains('bot')) {
       game.bot++;
+      revealAnswer(this);
     } else {
       game.human++;
+      endRound();
     }
-
     // Update the score
     updateScore();
+    console.log(game);
   }
 
   /**
@@ -82,18 +95,16 @@ game.questions = [];
   function updateScore(){
 
     // Bot score update
-    var botScore = qs('#bot-score');
-    botScore.textContent = game.bot;
+    var botScore = qsa('.bot-score');
+    botScore.forEach(function (score) { score.textContent = game.bot; });
 
     // Human score update
-    var humanScore = qs('#human-score');
-    humanScore.textContent = game.human;
+    var humanScore = qsa('.human-score');
+    humanScore.forEach(function (score) { score.textContent = game.human; });
 
     // Check if the guess limit has been reached
-    if (game.guess === 1) {
+    if (game.guess === 2) {
       endRound();
-    } else {
-      game.guess++;
     }
   }
 
@@ -101,19 +112,21 @@ game.questions = [];
    * Ends the round and checks if the game is over
    */
   function endRound() {
+    game.guess = 0;
 
     // Make the next button visible
     qs('#next').classList.remove('hidden');
 
     // Remove the event listeners from the answers
-    var answers = document.qsa('.answer');
+    var answers = qsa('.answer');
     for (var i = 0; i < answers.length; i++) {
       revealAnswer(answers[i]);
+      answers[i].removeEventListener('click', clickAnswer);
     }
 
-    // Check if the game is over
+    // Check for final round
     if (game.round === game.rounds) {
-      endGame();
+      qs('#next').addEventListener('click', endGame);
     }
   }
 
@@ -123,10 +136,13 @@ game.questions = [];
    * @return {void}
    */
   function revealAnswer(answer) {
+
+    answer.removeEventListener('click', clickAnswer);
+    var answerIcon = answer.querySelector('.answer-icon');
     if (answer.classList.contains('bot')) {
-      answer.textContent = BOT_EMOJI;
+      answerIcon.textContent = BOT_EMOJI;
     } else {
-      answer.textContent = HUMAN_EMOJI;
+      answerIcon.textContent = HUMAN_EMOJI;
     }
     answer.removeEventListener('click', clickAnswer);
   }
@@ -136,11 +152,39 @@ game.questions = [];
    * @return {void}
    */
   function endGame() {
-    if (!qs('#game').classList.contains('hidden')) {
-      qs('#tutorial').classList.add('hidden');
-      qs('#game').classList.add('hidden');
-      qs('#results').classList.remove('hidden');
+    qs('#tutorial').classList.add('hidden');
+    qs('#game').classList.add('hidden');
+    qs('#results').classList.remove('hidden');
+
+    game.round = 0;
+    game.guess = 0;
+    game.human = 0;
+    game.bot = 0;
+    game.questions = [];
+  }
+
+  /**
+   * Resets the answers to their default state
+   * @return {void}
+   */
+  function resetRound() {
+    game.round++;
+    game.guess = 0;
+    qs('#q-curr').textContent = game.round;
+    qs('#next').classList.add('hidden');
+  }
+
+  /**
+   * Retrieve an unused question from the question bank
+   * @return {object} - The question object
+   */
+  function getQuestion() {
+    var curr_number = Math.floor(Math.random() * QUESTIONS.length);
+    while (game.questions.includes(curr_number)) {
+      curr_number = Math.floor(Math.random() * QUESTIONS.length);
     }
+    game.questions.push(curr_number);
+    return QUESTIONS[curr_number];
   }
 
   /**
@@ -148,33 +192,42 @@ game.questions = [];
    */
   function populateRound() {
 
-      // Get a random question
-      var curr_number = Math.floor(Math.random() * QUESTIONS.length);
-      while (game.questions.includes(curr_number)) {
-        curr_number = Math.floor(Math.random() * QUESTIONS.length);
+    // Clears answers and retrieves a new, unique question
+    resetRound();
+    var curr = getQuestion();
+
+    // Get a random question
+    var curr_question = curr.question;
+    var curr_answers = shuffle(curr.answers);
+
+    // Set the question
+    var questionText = qs('#question');
+    questionText.textContent = curr_question;
+
+    // Set the answers
+    var answers = qsa('.answer');
+    for (var i = 0; i < answers.length; i++) {
+
+      // Set the answer text and icon
+      var answerText = answers[i].querySelector('.answer-text');
+      answerText.textContent = curr_answers[i].answerContent;
+
+      var answerIcon = answers[i].querySelector('.answer-icon');
+      answerIcon.textContent = ANSWER[i];
+
+      if (curr_answers[i].chatGPTAnswer) {
+        answers[i].classList.add('bot');
+      } else {
+        answers[i].classList.remove('bot');
       }
-      var curr_question = QUESTIONS[curr_number].question;
-      var curr_answers = shuffle(QUESTIONS[curr_number].answers);
+      answers[i].addEventListener('click', clickAnswer);
+    }
 
-      // Set the question
-      var questionText = qs('#question');
-      questionText.textContent = curr_question;
-
-      // Set the answers
-      var answers = document.qsa('.answer');
-      for (var i = 0; i < answers.length; i++) {
-        answers[i].textContent = curr_answers[i];
-        if (curr_answers[i].chatGPTAnswer) {
-          answers[i].classList.add('bot');
-        }
-        answers[i].addEventListener('click', clickAnswer);
-      }
-
-      // Adding the event listeners to the question buttons
-      var answerCards = qsa(".answer")
-      answerCards.forEach(function (card) {
-          card.addEventListener("click", clickAnswer);
-      });
+    // Adding the event listeners to the question buttons
+    var answerCards = qsa(".answer")
+    answerCards.forEach(function (card) {
+        card.addEventListener("click", clickAnswer);
+    });
 
       // Reset the guess counter
       game.guess = 0;

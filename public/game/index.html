@@ -33,7 +33,7 @@
             </nav>
         </div>
     </header>
-    <section id="tutorial" class="hidden">
+    <section id="tutorial" class="">
         <article>
             <h1>How to play</h1>
             <div class="tutorial-wrapper">
@@ -45,7 +45,7 @@
             <button id="game-start">Start game</button>
         </article>
     </section>
-    <section id="game" class="">
+    <section id="game" class="hidden">
         <article>
             <div id="game-ui">
                 <div id="qa" class="game-section">
@@ -90,7 +90,7 @@
                                 <c><p>Human</p></c>
                             </div>
                             <div id="score-current" class="score-element">
-                                <h1><span id="human-score">0</span> - <span id="bot-score">0</span></h1>
+                                <h1><span class="human-score">0</span> - <span class="bot-score">0</span></h1>
                                 <c><p>Score</p></c>
                             </div>
                             <div id="bot-icon" class="score-element">
@@ -106,8 +106,27 @@
                 </div>
         </article>
     </section>
-    <section id="ending" class="hidden">
-
+    <section id="results" class="hidden">
+        <article>
+            <h1>Final score</h1>
+            <div id="scoreboard">
+                <div id="score-line">
+                    <div class="score-element">
+                        <h1>🥳</h1>
+                        <c><p>Human</p></c>
+                    </div>
+                    <div class="score-element">
+                        <h1><span class="human-score">0</span> - <span class="bot-score">0</span></h1>
+                        <c><p>Score</p></c>
+                    </div>
+                    <div class="score-element">
+                        <h1>🤖</h1>
+                        <c><p>Bot</p></c>
+                    </div>
+                </div>
+            </div>
+            <button id="reset" class="">Play again</button>
+        </article>
     </section>
     <!--Parent horizontal flex layout to achieve columned-content-->
     <!-- Page footer -->
