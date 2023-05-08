@@ -77,16 +77,6 @@ article {
 
 /****** GAME UI ******/
 
-/* OUTLINE (for reference)
-#game-ui,
-#qa,
-#score,
-#scoreboard,
-#score-line,
-.score-element {
-  border: 1px solid #0ff;
-} */
-
 #qa {
   background-color: var(--background-primary);
   padding: 2rem;
