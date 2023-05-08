@@ -5,6 +5,9 @@ section,
 article,
 .tutorial-wrapper,
 .score-element,
+.answer,
+.answer-icon,
+#answers,
 #game-ui,
 #qa,
 #score,
@@ -16,6 +19,7 @@ article,
 section,
 article,
 .score-element,
+#answers,
 #score,
 #scoreboard,
 #score-line {
@@ -24,6 +28,8 @@ article,
 
 article,
 .score-element,
+.answer-icon,
+#answers,
 #qa,
 #score,
 #scoreboard {
@@ -31,12 +37,14 @@ article,
 }
 
 .tutorial-wrapper,
+.answer,
 #game-ui,
 #score-line {
   flex-direction: row;
 }
 
 section,
+.answer-icon,
 #scoreboard,
 #score-line {
   justify-content: center;
@@ -62,7 +70,6 @@ article {
   margin: 1rem;
 }
 
-
 .tutorialImage {
   margin: 1rem 0.5rem;
   width: 100%;
@@ -72,7 +79,7 @@ article {
 
 /****** GAME UI ******/
 
-/* OUTLINE (for reference) */
+/* OUTLINE (for reference)
 #game-ui,
 #qa,
 #score,
@@ -80,8 +87,52 @@ article {
 #score-line,
 .score-element {
   border: 1px solid #0ff;
+} */
+
+#qa {
+  background-color: var(--background-primary);
+  padding: 2rem;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
 }
 
+#question {
+  text-align: center;
+  align-self: center;
+  width: 60%;
+}
+
+.answer {
+  background-color: var(--background-card);
+  padding: 1.6rem 2.4rem;
+  border-radius: 0.5rem;
+  gap: 1rem;
+}
+
+.answer:hover {
+  color: var(--label-primary);
+  box-shadow: inset 0 0 0 1px var(--label-primary);
+
+}
+
+.answer-icon {
+  width: 24px;
+  height: 36px;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.answer:hover,
+button {
+  cursor: pointer;
+}
+
+#answers {
+  gap: 1rem;
+}
 
 
 #game-ui {

@@ -4,6 +4,7 @@
     /* Colors */
     --background-primary: rgba(31, 31, 31, 1);
     --background-secondary: rgba(15, 15, 15, 1);
+    --background-card: rgba(255, 255, 255, 0.05);
     --label-primary: rgba(245, 245, 254, 1);
     --label-secondary: rgba(245, 245, 254, 0.7);
     --label-tertiary: rgba(245, 245, 254, 0.3);
