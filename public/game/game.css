@@ -73,8 +73,6 @@ article {
 .tutorialImage {
   margin: 1rem 0.5rem;
   width: 100%;
-  border: 1px solid var(--divider-solid);
-  border-radius: 0.5rem;
 }
 
 /****** GAME UI ******/
