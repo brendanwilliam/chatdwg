@@ -30,7 +30,7 @@ game.questions = [];
    */
   function init() {
 
-    fetch('../../src/data/spotTheBot.json')
+    fetch('../src/data/spotTheBot.json')
       .then(response => response.json())
       .then(data => {
         QUESTIONS = data;
