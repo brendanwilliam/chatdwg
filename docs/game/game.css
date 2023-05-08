@@ -7,6 +7,7 @@ article,
 .score-element,
 .answer,
 .answer-icon,
+#score-summary,
 #answers,
 #game-ui,
 #qa,
@@ -19,6 +20,7 @@ article,
 section,
 article,
 .score-element,
+#score-summary,
 #answers,
 #score,
 #scoreboard,
@@ -29,6 +31,7 @@ article,
 article,
 .score-element,
 .answer-icon,
+#score-summary,
 #answers,
 #qa,
 #score,
@@ -105,9 +108,9 @@ article {
 
 .answer {
   background-color: var(--background-card);
-  padding: 1.6rem 2.4rem;
+  padding: 1.5rem;
   border-radius: 0.5rem;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .answer:hover {
@@ -179,6 +182,9 @@ button {
   width: 100%;
 }
 
+#score-summary {
+  gap: 2rem;
+}
 
 /******************** MOBILE BREAKPOINT ********************/
 @media (max-width: 685px) {
