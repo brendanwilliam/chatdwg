@@ -56,7 +56,6 @@ game.questions = [];
     game.bot = 0;
     game.human = 0;
     game.round = 0;
-    game.guess = 0;
     qs('#q-total').textContent = game.rounds;
 
     qs('#tutorial').classList.add('hidden');
@@ -112,7 +111,6 @@ game.questions = [];
    * Ends the round and checks if the game is over
    */
   function endRound() {
-    game.guess = 0;
 
     // Make the next button visible
     qs('#next').classList.remove('hidden');
@@ -152,12 +150,11 @@ game.questions = [];
    * @return {void}
    */
   function endGame() {
+    qs('#next').removeEventListener('click', endGame);
     qs('#tutorial').classList.add('hidden');
     qs('#game').classList.add('hidden');
     qs('#results').classList.remove('hidden');
 
-    game.round = 0;
-    game.guess = 0;
     game.human = 0;
     game.bot = 0;
     game.questions = [];
@@ -169,7 +166,6 @@ game.questions = [];
    */
   function resetRound() {
     game.round++;
-    game.guess = 0;
     qs('#q-curr').textContent = game.round;
     qs('#next').classList.add('hidden');
   }
@@ -179,6 +175,7 @@ game.questions = [];
    * @return {object} - The question object
    */
   function getQuestion() {
+    game.guess = 0;
     var curr_number = Math.floor(Math.random() * QUESTIONS.length);
     while (game.questions.includes(curr_number)) {
       curr_number = Math.floor(Math.random() * QUESTIONS.length);
@@ -228,9 +225,6 @@ game.questions = [];
     answerCards.forEach(function (card) {
         card.addEventListener("click", clickAnswer);
     });
-
-      // Reset the guess counter
-      game.guess = 0;
   }
 
   /**
@@ -247,7 +241,6 @@ game.questions = [];
     }
     return arr;
   }
-
 
   /* ------------------------------ Helper Functions  ------------------------------ */
   /**
@@ -267,5 +260,4 @@ game.questions = [];
    function qsa(selector) {
     return document.querySelectorAll(selector);
   }
-
 })();
