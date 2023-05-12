@@ -66,7 +66,7 @@ section {
   width: 100vw;
 }
 article {
-  margin-top: 80px;;
+  margin-top: 80px;
 }
 
 /****** TUTORIAL UI ******/
@@ -97,7 +97,8 @@ article {
   width: 60%;
 }
 
-.answer > div {
+.answer > div,
+#feedback-text {
   padding: 0;
   margin: 0;
 }
@@ -133,6 +134,24 @@ button {
 
 #answers {
   gap: 1rem;
+}
+
+.human-clicked,
+.human-clicked:hover {
+  box-shadow: inset 0 0 0 1px var(--correct-green);
+}
+
+.bot-clicked,
+.bot-clicked:hover {
+  box-shadow: inset 0 0 0 1px var(--incorrect-red);
+}
+
+.bot-clicked,
+.bot-clicked:hover,
+.human-clicked,
+.human-clicked:hover {
+  cursor: default;
+  color: var(--label-secondary);
 }
 
 
@@ -188,8 +207,81 @@ button {
 
 /******************** MOBILE BREAKPOINT ********************/
 @media (max-width: 685px) {
-  div.tutorial-wrapper {
+  #scoreboard {
+    position: absolute;
+    top: 100px;
+    width: 90%;
+    padding: 1rem 0;
+  }
+
+  section {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  article {
+    padding: 20px 0 50px 0;
+    margin-top: 0;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
+
+  #game > article {
+    margin-top: 145px;
+  }
+
+  .tutorial-wrapper,
+  #game-ui {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  #next,
+  #score,
+  #game-start,
+  #reset {
+    width: 90%;
+  }
+
+  #qa {
+    padding: 0;
+    margin: 0;
+  }
+
+  #answers {
+    padding: 1rem;
+    gap: 10px;
+  }
+
+  #question {
+    width: 90%;
+  }
+
+  #score-summary {
+    width: 90%;
+    gap: 1rem;
+    justify-content: space-evenly;
+  }
+
+  #scoreboard.final-score {
+    position: relative;
+    top: 0px;
+  }
+
+  article,
+  #score {
+    width: 100%;
+  }
+
+  .tutorialImage {
+    padding: 0;
+    margin: 0;
+    width: 80%;
+  }
+
+
 }

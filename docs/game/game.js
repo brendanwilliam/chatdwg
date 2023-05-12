@@ -6,7 +6,7 @@
 
 const BOT_EMOJI = '🤖';
 const HUMAN_EMOJI = '🥳';
-const MAX_ROUNDS = 2;
+const MAX_ROUNDS = 5;
 const ANSWER = ['A.', 'B.', 'C.'];
 
 var questions = new Object();
@@ -48,7 +48,6 @@ game.questions = [];
    * @return {void}
    */
   function startGame() {
-
     var answers = qsa('.answer');
     answers.forEach(function(answer) { answer.classList.remove('bot'); });
 
@@ -65,6 +64,7 @@ game.questions = [];
     // Populate the first round
     populateRound();
     updateScore();
+    resetView();
   }
 
   /**
@@ -84,7 +84,6 @@ game.questions = [];
     }
     // Update the score
     updateScore();
-    console.log(game);
   }
 
   /**
@@ -139,8 +138,10 @@ game.questions = [];
     var answerIcon = answer.querySelector('.answer-icon');
     if (answer.classList.contains('bot')) {
       answerIcon.textContent = BOT_EMOJI;
+      answer.classList.add('bot-clicked');
     } else {
       answerIcon.textContent = HUMAN_EMOJI;
+      answer.classList.add('human-clicked');
     }
     answer.removeEventListener('click', clickAnswer);
   }
@@ -188,6 +189,7 @@ game.questions = [];
    * Populates a round with a random question
    */
   function populateRound() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
     // Clears answers and retrieves a new, unique question
     resetRound();
@@ -204,6 +206,9 @@ game.questions = [];
     // Set the answers
     var answers = qsa('.answer');
     for (var i = 0; i < answers.length; i++) {
+
+      answers[i].classList.remove('bot-clicked');
+      answers[i].classList.remove('human-clicked');
 
       // Set the answer text and icon
       var answerText = answers[i].querySelector('.answer-text');
@@ -225,6 +230,7 @@ game.questions = [];
     answerCards.forEach(function (card) {
         card.addEventListener("click", clickAnswer);
     });
+    resetView();
   }
 
   /**
@@ -250,6 +256,13 @@ game.questions = [];
   */
   function qs(selector) {
     return document.querySelector(selector);
+  }
+
+  function resetView() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
 
   /**

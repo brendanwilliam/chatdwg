@@ -106,6 +106,7 @@ a.current {
   /* Make page links full width */
   .navbar {
     display: block;
+    position: relative;
   }
 
   nav > ul, .navbar {
@@ -127,4 +128,8 @@ a.current {
   li {
     padding: 1rem 0;
   }
+  a.logo > img {
+    width: 160px;
+  }
+
 }
