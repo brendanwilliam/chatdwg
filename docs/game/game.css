@@ -242,7 +242,8 @@ button {
 
   #next,
   #score,
-  #game-start {
+  #game-start,
+  #reset {
     width: 90%;
   }
 
@@ -260,7 +261,16 @@ button {
     width: 90%;
   }
 
+  #score-summary {
+    width: 90%;
+    gap: 1rem;
+    justify-content: space-evenly;
+  }
 
+  #scoreboard.final-score {
+    position: relative;
+    top: 0px;
+  }
 
   article,
   #score {
