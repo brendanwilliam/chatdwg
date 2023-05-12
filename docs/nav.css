@@ -3,6 +3,10 @@
 /******************** DEFAULT STYLING ********************/
 
 /****** Nav bar styling ******/
+
+.navbar {
+  z-index: 10;
+}
 /* Height */
 a.logo {
   height: 80px;
@@ -106,7 +110,7 @@ a.current {
   /* Make page links full width */
   .navbar {
     display: block;
-    position: relative;
+    position: absolute;
   }
 
   nav > ul, .navbar {
@@ -118,10 +122,17 @@ a.current {
     display: none;
   }
 
+  ul {
+    margin: 0;
+    padding-bottom: 1rem;
+  }
+
   nav.open {
     display: block;
-    background-color: var(--background-secondary);
+    background-color: var(--background-primary);
     padding: 0;
+    border-top: solid 1px var(--divider-solid);
+    border-bottom: solid 1px var(--divider-solid);
   }
 
   /* Page links */

@@ -64,7 +64,6 @@ game.questions = [];
     // Populate the first round
     populateRound();
     updateScore();
-    resetView();
   }
 
   /**
@@ -189,10 +188,10 @@ game.questions = [];
    * Populates a round with a random question
    */
   function populateRound() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
 
     // Clears answers and retrieves a new, unique question
     resetRound();
+    resetView();
     var curr = getQuestion();
 
     // Get a random question
@@ -230,7 +229,6 @@ game.questions = [];
     answerCards.forEach(function (card) {
         card.addEventListener("click", clickAnswer);
     });
-    resetView();
   }
 
   /**

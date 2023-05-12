@@ -221,14 +221,14 @@ button {
 
   article {
     padding: 20px 0 50px 0;
-    margin-top: 0;
+    margin-top: 80px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 
   #game > article {
-    margin-top: 145px;
+    margin-top: 225px;
   }
 
   .tutorial-wrapper,
