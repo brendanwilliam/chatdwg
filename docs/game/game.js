@@ -6,7 +6,7 @@
 
 const BOT_EMOJI = '🤖';
 const HUMAN_EMOJI = '🥳';
-const MAX_ROUNDS = 2;
+const MAX_ROUNDS = 5;
 const ANSWER = ['A.', 'B.', 'C.'];
 
 var questions = new Object();
@@ -165,6 +165,7 @@ game.questions = [];
    * @return {void}
    */
   function resetRound() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     game.round++;
     qs('#q-curr').textContent = game.round;
     qs('#next').classList.add('hidden');
