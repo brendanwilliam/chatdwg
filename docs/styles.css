@@ -10,7 +10,8 @@
     --label-tertiary: rgba(245, 245, 254, 0.3);
     --divider-solid: rgba(77, 77, 77, 1);
     --divider-transparent: rgba(255, 255, 255, 0.2);
-    --accent-dark: rgba(167, 113, 255, 1);
+    --accent-dark: rgba(130, 82, 209, 1);
+    --accent-light: rgba(167, 113, 255, 1);
     --transparent: rgba(245, 245, 245, 0);
 
 

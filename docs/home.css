@@ -1,7 +1,4 @@
-:root {
-    --accent-dark: rgba(130, 82, 209, 1);
-    --accent-light: rgba(167, 113, 255, 1);
-}
+@import url(styles.css);
 
 /* for the chevron */
 .material-symbols-outlined {
@@ -19,10 +16,11 @@ section:nth-of-type(even) {
 
 /* style links */
 a {
-    color: var(--accent-light)
+    color: var(--accent-light);
 }
 
-.remove-link-style {
+.remove-link-style,
+.remove-link-style:hover {
     color: inherit;
     text-decoration: none;
 }
@@ -191,4 +189,13 @@ section.section-video .embed {
 .button-primary:hover {
     cursor: pointer;
     background-color: var(--accent-light);
+}
+
+.github-link {
+    color: var(--accent-light);
+    text-decoration: underline;
+}
+
+.github-link:hover {
+    color: var(--accent-dark);
 }
