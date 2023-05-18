@@ -1,6 +1,6 @@
 @import url(styles.css);
 
-/* for the chevron */
+/* for the chevron and email icons */
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
 }
@@ -110,6 +110,11 @@ section.section-team {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
+}
+
+.contact-links a {
+    margin: 0 10px;
+    font-size: 1.5rem;
 }
 
 @media (max-width: 990px) {

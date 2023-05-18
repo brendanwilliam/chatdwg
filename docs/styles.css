@@ -414,6 +414,10 @@ button:hover {
     cursor: pointer;
 }
 
+#game-start:hover, #next:hover {
+    background-color: var(--accent-light);
+}
+
 .hidden {
     display: none
 }
