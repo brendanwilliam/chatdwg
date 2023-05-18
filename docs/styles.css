@@ -428,7 +428,9 @@ button:hover {
 
 /* Hide left column when screen is less than 800px */
 @media only screen and (max-width: 800px) {
-    section {
+    section.section-video,
+    section.section-team,
+    section.section-about {
         padding: 80px 18px !important;
     }
 
