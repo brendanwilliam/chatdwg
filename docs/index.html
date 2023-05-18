@@ -60,11 +60,11 @@
                 </div>
                 <!-- <h2>Empowering responsible AI exploration through the classic game of two truths and a lie</h2> -->
                 <div>
-                    <a href="./game" class="button-primary remove-link-style">Play Game</a>
+                    <a href="./game" class="shrink button-primary remove-link-style">Play Game</a>
                 </div>
             </div>
             <div>
-                <button class="button-scroll" onclick="scrollToSection()">
+                <button class="grow button-scroll" onclick="scrollToSection()">
                     learn more
                     <span class="material-symbols-outlined">expand_more</span>
                 </button>
@@ -79,7 +79,7 @@
         <script>
             const headerHeight = document.querySelector('header').offsetHeight;
             const section = document.querySelector('section.section-above-fold');
-            section.style.height = `calc(100vh - 120px)`;
+            section.style.height = `calc(100vh - 100px)`;
         </script>
 
         <!-- about project -->
@@ -95,24 +95,25 @@
         <!-- key features -->
         <section class="section-features">
             <h1>Key Features</h1>
-            <h2><a href="game.html" class="remove-link-style">Spot the Bot</a></h2>
-                <ul>
+                <ul class="link-tile-list">
                     <li>
-                        <img src="" alt="">
-                        <p>Compare human writing to ChatGPT writing</p>
+                        <a class="link-tile grow" href="./game/">
+                            <img src="src/img/mdi_robot.svg" alt="Robot icon">
+                            <p>Compare AI and human writing</p>
+                        </a>
                     </li>
                     <li>
-                        <img src="" alt="">
-                        <p>Learn key terminology about AI</p>
+                        <a class="link-tile grow" href="./game/">
+                            <img src="src/img/mdi_brain.svg" alt="Robot icon">
+                            <p>Learn real-world AI terminology</p>
+                        </a>
                     </li>
                     <li>
-                        <img src="" alt="">
-                        <p>Explore AI learning resources</p>
+                        <a class="link-tile grow" href="./resources/">
+                            <img src="src/img/mdi_search-web.svg" alt="Robot icon">
+                            <p>Explore AI learning resources</p>
+                        </a>
                     </li>
-                </ul>
-            <h2><a href="game.html" class="remove-link-style">Educational Resources</a></h2>
-                <ul>
-                    <li>Directory of educational resources to learn more about ChatGPT</li>
                 </ul>
         </section>
 

@@ -71,6 +71,39 @@ c > p {
     margin: 0;
 }
 
+/************ ANIMATIONS ************/
+.grow {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -ms-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.grow:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.shrink {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -ms-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.shrink:hover {
+    transform: scale(0.90);
+    -webkit-transform: scale(0.90);
+    -moz-transform: scale(0.90);
+    -ms-transform: scale(0.90);
+    -o-transform: scale(0.90);
+}
+
 /************ LAYOUT ************/
 
 .userInputPage {
@@ -426,12 +459,63 @@ button:hover {
     visibility: hidden;
 }
 
+/************************* Link tiles ***********************/
+.link-tile-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.link-tile {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--background-primary);
+    padding: 2.5rem;
+    margin: 0rem 1rem 1rem 1rem;
+    gap: 0rem;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.link-tile > p {
+    font: 400 22px/28px 'Fira Sans', sans-serif;
+    margin-top: 4px;
+}
+
+.link-tile:hover {
+    box-shadow: 0 0 0 2px var(--label-primary);
+    color: var(--label-primary);
+}
+
+section.section-features {
+    padding: 80px 50px !important;
+}
+
+
 /* Hide left column when screen is less than 800px */
 @media only screen and (max-width: 800px) {
     section.section-video,
     section.section-team,
-    section.section-about {
+    section.section-about,
+    section.section-above-fold {
         padding: 80px 18px !important;
+    }
+
+    .link-tile-list {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
     }
 
     #sideMenu {
