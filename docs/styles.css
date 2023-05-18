@@ -428,6 +428,10 @@ button:hover {
 
 /* Hide left column when screen is less than 800px */
 @media only screen and (max-width: 800px) {
+    section {
+        padding: 80px 18px !important;
+    }
+
     #sideMenu {
         display: none;
     }
@@ -449,6 +453,38 @@ button:hover {
     .userInputPage h2 {
         margin-top: 7rem;
         font-size: 1.1rem;
+    }
+
+    #heroText > h1 {
+        font: 600 41px/1.1em 'Fira Sans', sans-serif;
+        margin-top: 40%;
+        width: 16ch;
+    }
+    #heroText > h2 {
+        font: 400 22px/28px 'Fira Sans', sans-serif;
+        color: var(--label-secondary);
+    }
+
+    .section-above-fold > div:nth-child(1) {
+        justify-content: space-between;
+        align-content: center;
+        padding: 1rem;
+    }
+
+    a.button-primary {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    video {
+        width: 90vw;
+        height: auto;
+    }
+
+    .section-above-fold {
+        height: calc(100vh - 80px);
     }
 }
 
