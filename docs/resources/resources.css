@@ -7,7 +7,7 @@
   justify-content: center;
   height: 60vh;
   background-color: var(--background-secondary);
-
+  background-image: url(../src/img/background_hero.png);
 }
 
 section {
@@ -24,8 +24,10 @@ section {
 }
 
 #hero > p {
+  padding-top: 1rem;
   width: 60ch;
   margin: 0 auto;
+  text-align: center;
 }
 
 h1 {
@@ -127,5 +129,21 @@ iframe {
 }
 
 @media (max-width: 685px) {
-  
+
+  .resource {
+    padding: 2rem;
+  }
+  .resource > a {
+    flex-direction: column;
+  }
+
+  .resource-flex {
+    width: 100%;
+    padding: 0;
+  }
+
+  .resource-img {
+    width: 80px;
+    margin-bottom: 50px;
+  }
 }

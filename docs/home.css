@@ -53,7 +53,7 @@ section.section-above-fold > div:nth-of-type(1) {
 section.section-above-fold h1 {
     font-size: 54px;
     line-height: 74px;
-    margin: 15px 0px;
+    margin: 120px 0px 20px 0px;
 }
 
 section.section-above-fold h2 {
@@ -74,6 +74,10 @@ section.section-above-fold .button-scroll {
 
 section.section-above-fold span {
     font-size: 36px;
+}
+
+section.section-above-fold {
+    background-image: url(src/img/background_hero.png);
 }
 
 /* ABOUT PROJECT SECTION */
