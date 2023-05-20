@@ -1,0 +1,122 @@
+[
+    {
+        "title":"Basic Intro",
+        "brand":"YouTube",
+        "audience":"Novice learners",
+        "category":"Video",
+        "link":"https:\/\/www.youtube.com\/watch?v=V2RoqUr0qDU",
+        "description":"A basic overview of ChatGPT by an AI scholar, when it was first released."
+    },
+    {
+        "title":"More Advanced",
+        "brand":"YouTube",
+        "audience":"Novice learners",
+        "category":"Video",
+        "link":"https:\/\/www.youtube.com\/watch?v=LVcxmmXNaj4&pp=ygUZY2hhdGdwdCB0d28gbWludXRlIHBhcGVycw%3D%3D",
+        "description":"A more in-depth look at the applications of ChatGPT, 3 months after initial launch. Shows the incredibly progress and implementations after just a few months after its world-wide release."
+    },
+    {
+        "title":"Chat GPT-4",
+        "brand":"YouTube",
+        "audience":"Novice learners",
+        "category":"Video",
+        "link":"https:\/\/www.youtube.com\/watch?v=5kBu7z7Ye7M",
+        "description":"A look at the advancements and improvements of GPT-4 over ChatGPT-3. Demonstrates the exponential improvement of the AI sector as a whole, and points to future applications."
+    },
+    {
+        "title":"Future Speculation",
+        "brand":"YouTube",
+        "audience":"Novice learners",
+        "category":"Video",
+        "link":"https:\/\/www.youtube.com\/watch?v=0uQqMxXoNVs",
+        "description":"A long, in-depth exploration of the possible effects of ChatGPT and other similar products, and where the future of technology and our society might go."
+    },
+    {
+        "title":"How to Use ChatGPT to Learn",
+        "brand":"YouTube",
+        "audience":"Novice learners",
+        "category":"Video",
+        "link":"https:\/\/www.youtube.com\/watch?v=MnDudvCyWpc",
+        "description":"A great tutorial on how to utilize ChatGPT as a learning assistant. Applicable to many similar lines of thinking an using GPT as an assistant."
+    },
+    {
+        "title":"Ultimate Resource for Prompts",
+        "brand":"Medium",
+        "audience":"Intermediate learners",
+        "category":"Blog",
+        "link":"https:\/\/medium.com\/mlearning-ai\/the-chatgpt-list-of-lists-a-collection-of-1500-useful-mind-blowing-and-strange-use-cases-8b14c35eb",
+        "description":"A huge, diverse list of links to useful prompts to best use ChatGPT. Great for Novice learnerss and learning more about the product."
+    },
+    {
+        "title":"Educator Guidelines from Open AI",
+        "brand":"OpenAI",
+        "audience":"Teachers",
+        "category":"Blog",
+        "link":"https:\/\/platform.openai.com\/docs\/chatgpt-education",
+        "description":"OpenAI's guide to ChatGPT for educators. This resource includes everything from classroom use cases to the ethics of using AI classifiers."
+    },
+    {
+        "title":"AI Classifiers FAQ",
+        "brand":"GPTZero",
+        "audience":"Teachers, Students",
+        "category":"Blog",
+        "link":"https:\/\/gptzero.me\/faq",
+        "description":"Frequently asked questions about AI classifiers answered by the GPTZero team. "
+    },
+    {
+        "title":"How AI Classifiers Work",
+        "brand":"Paraphrasingtool",
+        "audience":"Teachers, Students",
+        "category":"Blog",
+        "link":"https:\/\/paraphrasingtool.ai\/ai-content-detectors-a-useful-tool-or-a-flawed-solution\/",
+        "description":"An intuitive explanation of how AI classifiers work, and their fundamental flaws in policing academic honesty."
+    },
+    {
+        "title":"AI Classifier from OpenAI",
+        "brand":"OpenAI",
+        "audience":"Teachers",
+        "category":"Blog",
+        "link":"https:\/\/openai.com\/blog\/new-ai-classifier-for-indicating-ai-written-text",
+        "description":"The AI classifier from OpenAI, the creators of ChatGPT."
+    },
+    {
+        "title":"Coursera's Intro to ChatGPT",
+        "brand":"Coursera",
+        "audience":"Intermediate learners",
+        "category":"Course",
+        "link":"https:\/\/www.coursera.org\/projects\/chat-gpt-for-Novice learnerss-using-ai-for-market-research",
+        "description":"Get up and running with ChatGPT in this 2-hour Novice learners-friendly course created by Coursera. Course price: $9.99"
+    },
+    {
+        "title":"edX's Intro to ChatGPT",
+        "brand":"edX",
+        "audience":"Intermediate learners",
+        "category":"Course",
+        "link":"https:\/\/www.edx.org\/course\/introduction-to-chatgpt",
+        "description":"Get comfortable with using ChatGPT in your everyday workflow in this 2-hour course created by edX. Course price: FREE to audit, $20.00 for certificate."
+    },
+    {
+        "title":"Codecademy's Intro to ChatGPT",
+        "brand":"Codecademy",
+        "audience":"Intermediate learners",
+        "category":"Course",
+        "link":"https:\/\/www.codecademy.com\/learn\/intro-to-chatgpt",
+        "description":"Learn about generative AI and writing effective prompts along with the limitations of ChatGPT in this 7-hour from Codecademy. Course price: FREE to audit, $34.99\/mo for certificate."
+    },
+    {
+        "title":"DeepLearning.AI's NLP and Attention Models Course",
+        "brand":"Coursera",
+        "audience":"Advanced learners",
+        "category":"Course",
+        "link":"https:\/\/www.coursera.org\/learn\/attention-models-in-nlp",
+        "description":"Explore the world of AI in greater depth with this 35-hour course on Natrual Language Processing and Attention Models from DeepLearning.AI. Course price: 7-day free trial, $49.00\/mo after trial ends."
+    },
+    {
+        "title":"LinkedIn Learning's Intro to Prompt Engineering",
+        "brand":"LinkedInLearning",
+        "audience":"Intermediate learners",
+        "category":"Course",
+        "link":"https:\/\/www.linkedin.com\/learning\/introduction-to-prompt-engineering-for-generative-ai?u=67682169",
+        "description":"Discover the new world of Prompt Engineering in this 2-hour LinkedIn Learning course from Ronnie Sheer. Course price: 30-day free trail, $39.99\/mo after trial ends."
+    }
+]

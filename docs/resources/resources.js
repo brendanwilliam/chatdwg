@@ -44,45 +44,11 @@ var courses = [];
   function loadVideos() {
     var videoContainer = document.getElementById('video-list');
     videos.forEach(function(video) {
-      var videoCard = createVideoCard(video);
+      var videoCard = createResource(video);
       videoContainer.appendChild(videoCard);
     });
 
   }
-
-  function createVideoCard(video) {
-    var videoTitle = document.createElement('h3');
-    videoTitle.textContent = video.title;
-
-    var videoAudience = document.createElement('h4');
-    videoAudience.textContent = video.audience;
-
-    var videoDesc = document.createElement('p');
-    videoDesc.textContent = video.description;
-
-    var videoLink = document.createElement('a');
-    videoLink.href = video.link;
-
-    var flex1 = document.createElement('div');
-    flex1.classList.add('resource-flex')
-
-    var flex2 = document.createElement('div');
-    flex2.classList.add('resource-flex')
-
-    var videoCard = document.createElement('div');
-    videoCard.classList.add('video');
-    videoCard.classList.add('grow');
-
-    flex1.appendChild(videoTitle);
-    flex1.appendChild(videoAudience);
-    flex2.appendChild(videoDesc);
-    videoLink.appendChild(flex1);
-    videoLink.appendChild(flex2);
-    videoCard.appendChild(videoLink);
-
-    return videoCard;
-  }
-
 
   function loadBlogs() {
     var videoContainer = document.getElementById('blog-list');
@@ -95,9 +61,48 @@ var courses = [];
   function loadCourses() {
     var videoContainer = document.getElementById('course-list');
     courses.forEach(function(course) {
-      var courseCard = createVideoCard(course);
+      var courseCard = createResource(course);
       videoContainer.appendChild(courseCard);
     });
+  }
+
+  function createResource(resource) {
+    var resourceImage = document.createElement('img');
+    var resourcePath = '../src/img/brands/' + resource.brand + '.png';
+    resourceImage.src = resourcePath;
+    resourceImage.classList.add('resource-img');
+
+    var resourceTitle = document.createElement('h3');
+    resourceTitle.textContent = resource.title;
+
+    var resourceAudience = document.createElement('h4');
+    resourceAudience.textContent = "Best for " + resource.audience;
+
+    var resourceDesc = document.createElement('p');
+    resourceDesc.textContent = resource.description;
+
+    var resourceLink = document.createElement('a');
+    resourceLink.href = resource.link;
+
+    var flex1 = document.createElement('div');
+    flex1.classList.add('resource-flex')
+
+    var flex2 = document.createElement('div');
+    flex2.classList.add('resource-flex')
+
+    var resourceCard = document.createElement('div');
+    resourceCard.classList.add('resource');
+    resourceCard.classList.add('grow');
+
+    flex1.appendChild(resourceTitle);
+    flex1.appendChild(resourceAudience);
+    flex1.appendChild(resourceImage);
+    flex2.appendChild(resourceDesc);
+    resourceLink.appendChild(flex1);
+    resourceLink.appendChild(flex2);
+    resourceCard.appendChild(resourceLink);
+
+    return resourceCard;
   }
 
 
