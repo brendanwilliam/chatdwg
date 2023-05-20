@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>ChatDWG</title>
-    <link rel="icon" type="image/png" href="/img/Logos/Logo_Icon.png">
+    <link rel="icon" type="image/png" href="../src/img/Logos/Logo_Icon.png">
     <meta name="description" content="Understanding ChatGPT's limitations: Empowering responsible AI exploration">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,25 +57,22 @@
                 level of curiosity.
             </p>
         </section>
-        <section id="video"">
-            <article>
-                <h1>Videos</h1>
-                <ul class="videos">
-                    <li class="video-preview">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/dSzqzNQi_A8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        <div class="resource-info">
-                            <h2 id="video-title">Video Title</h2>
-                            <h3 id="video-audience">Video Audience</h3>
-                            <p id="video-description">Video Description</p>
-                        </div>
-                    </li>
-                </ul>
-            </article>
+        <section id="video" class="background-primary">
+            <h2>Videos</h2>
+            <div id="video-list" class="videos"></div>
         </section>
-
-
-
-
+        <section id="blogs">
+            <h2>Blogs</h2>
+            <div id="blog-list" class="pages">
+                <div class="blog"></div>
+            </div>
+        </section>
+        <section id="courses">
+            <h2>Courses</h2>
+            <div id="course-list" class="pages">
+                <div class="course"></div>
+            </div>
+        </section>
     </main>
 
     <!-- Page footer -->
@@ -86,6 +83,7 @@
     <!-- Place script at end of body tag so that it can manipulate the elements declared on this page
     (placing in head tag won't work since the script runs before the DOM is loaded) -->
     <script src = "../index.js"></script>
+    <script src = "resources.js"></script>
 </body>
 
 </html>
